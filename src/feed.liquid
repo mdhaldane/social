@@ -1,0 +1,27 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Matt Haldane | Microblog</title>
+  <subtitle>Matt Haldane's self-hosted decentralized microblog.</subtitle>
+  <link href="https://matthaldane.com/microblog/feed.xml" rel="self" />
+  <link href="https://matthaldane.com/microblog/" />
+  <updated>{{ "now" | dateToISO }}</updated>
+  <id>https://matthaldane.com/microblog/</id>
+  <author>
+    <name>Matt Haldane</name>
+  </author>
+  {%- for post in collections.posts reversed limit:20 -%}
+    {%- assign postUrlWithPrefix = post.url | url -%}
+    {%- assign absolutePostUrl = "https://matthaldane.com" | append: postUrlWithPrefix -%}
+    <entry>
+      <title>{{ post.data.title | default: "Micro-Note" }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <updated>{{ post.date | dateToISO }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content type="html"><![CDATA[{{ post.content }}]]></content>
+    </entry>
+  {%- endfor -%}
+</feed>

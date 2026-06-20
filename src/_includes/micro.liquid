@@ -1,0 +1,61 @@
+---
+layout: base.liquid
+---
+<article class="h-entry">
+  <div class="e-content">
+    {{ content }}
+  </div>
+  <a href="{{ page.url | url }}" class="u-url">
+    <time class="dt-published" datetime="{{ page.date | dateToISO }}">{{ page.date | date: "%b %d, %Y @ %H:%M" }}</time>
+  </a>
+
+  <!-- Webmentions Section -->
+  {%- assign postUrlWithPrefix = page.url | url -%}
+  {%- assign postAbsoluteUrl = "https://matthaldane.com" | append: postUrlWithPrefix -%}
+  {%- assign postMentions = webmentions[postAbsoluteUrl] -%}
+
+  {%- if postMentions and postMentions.size > 0 -%}
+    <div class="webmentions">
+      <h3>Interactions</h3>
+      <ul class="webmentions-list">
+        {%- for mention in postMentions -%}
+          <li class="webmention-item">
+            {%- if mention.author.photo -%}
+              <img class="webmention-avatar" src="{{ mention.author.photo }}" alt="{{ mention.author.name }}" loading="lazy" />
+            {%- else -%}
+              <img class="webmention-avatar" src="{{ '/css/avatar-placeholder.png' | url }}" alt="Placeholder Avatar" />
+            {%- endif -%}
+            <div class="webmention-content">
+              <div class="webmention-header-info">
+                <span class="webmention-author">
+                  {%- if mention.author.url -%}
+                    <a href="{{ mention.author.url }}" target="_blank" rel="noopener noreferrer">{{ mention.author.name | default: "Anonymous" }}</a>
+                  {%- else -%}
+                    {{ mention.author.name | default: "Anonymous" }}
+                  {%- endif -%}
+                </span>
+                <span class="webmention-type">
+                  {%- if mention.type == "like" -%}
+                    liked this post
+                  {%- elsif mention.type == "repost" -%}
+                    reposted this
+                  {%- else -%}
+                    replied
+                  {%- endif -%}
+                </span>
+                {%- if mention.published -%}
+                  <time class="webmention-meta" datetime="{{ mention.published | dateToISO }}">{{ mention.published | date: "%b %d, %Y" }}</time>
+                {%- endif -%}
+              </div>
+              {%- if mention.content and mention.content.value -%}
+                <div class="webmention-body">
+                  {{ mention.content.value }}
+                </div>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</article>

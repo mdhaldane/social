@@ -1,0 +1,20 @@
+---
+layout: base.liquid
+title: "Matt Haldane | Microblog"
+---
+<h1 class="page-title">Micro-Notes</h1>
+
+<div class="posts-list">
+  {%- for post in collections.posts reversed -%}
+    <article class="h-entry">
+      <div class="e-content">
+        {{ post.content }}
+      </div>
+      <a href="{{ post.url | url }}" class="u-url">
+        <time class="dt-published" datetime="{{ post.date | dateToISO }}">{{ post.date | date: "%b %d, %Y @ %H:%M" }}</time>
+      </a>
+    </article>
+  {%- else -%}
+    <p>No micro-notes published yet.</p>
+  {%- endfor -%}
+</div>

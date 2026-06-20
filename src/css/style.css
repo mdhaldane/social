@@ -1,0 +1,306 @@
+/* --- Google Font import for terminal feel --- */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&display=swap');
+
+/* --- Custom properties matching matthaldane.com's IBM 2260 Terminal Theme --- */
+:root {
+  --bg-color: #101015;
+  --footer-bg-color: #0b0b0f;
+  --text-color: #E8E3D3;
+  --accent-color: #D4C5B0;
+  --hover-color: #dfd4c4;
+  --border-color: #1d1d26;
+  --meta-color: #8c887e;
+  --font-stack: "IBM Plex Mono", "Courier New", Courier, "Lucida Console", Monaco, monospace;
+}
+
+/* --- Base Elements --- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-stack);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-color);
+  font-family: var(--font-stack);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+p, li, span, div {
+  font-family: var(--font-stack);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent-color);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+  border-bottom-style: solid;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+header.masthead {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.masthead-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-color) !important;
+  border-bottom: none;
+}
+
+.masthead__menu {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.masthead__menu-item a {
+  color: var(--text-color) !important;
+  border-bottom: none;
+  font-weight: 400;
+}
+
+.masthead__menu-item a:hover {
+  color: var(--accent-color) !important;
+}
+
+/* --- Microblog Posts --- */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.h-entry {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.h-entry:hover {
+  border-color: var(--accent-color);
+}
+
+.e-content {
+  margin-bottom: 1rem;
+}
+
+.e-content p:last-child {
+  margin-bottom: 0;
+}
+
+.u-url {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--meta-color);
+  border-bottom: none;
+}
+
+.u-url:hover {
+  color: var(--accent-color);
+}
+
+.dt-published {
+  font-weight: 300;
+}
+
+/* --- Webmentions Section --- */
+.webmentions {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.webmentions h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.webmentions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.webmention-item {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.webmention-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--footer-bg-color);
+}
+
+.webmention-content {
+  flex: 1;
+}
+
+.webmention-author {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.webmention-meta {
+  font-size: 0.8rem;
+  color: var(--meta-color);
+  margin-left: 0.5rem;
+}
+
+.webmention-body {
+  margin-top: 0.25rem;
+  color: var(--text-color);
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: var(--footer-bg-color);
+  border-top: 1px solid var(--border-color);
+  color: var(--meta-color);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--meta-color);
+}
+
+.site-footer a:hover {
+  color: var(--accent-color);
+}
+
+/* --- Media Queries --- */
+@media (max-width: 480px) {
+  .masthead-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --- Responsive Images inside Post Content --- */
+.e-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  cursor: zoom-in;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.e-content img:hover {
+  border-color: var(--accent-color);
+  transform: scale(1.005);
+}
+
+/* --- Lightbox Modal (Glassmorphism & Fade In) --- */
+#lightbox-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(16, 16, 21, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  cursor: zoom-out;
+}
+
+#lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  transform: scale(0.97);
+  transition: transform 0.25s ease-in-out;
+}
+
+#lightbox-modal.active #lightbox-img {
+  transform: scale(1);
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: var(--accent-color);
+  font-size: 2.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: monospace;
+}
+
+#lightbox-close:hover {
+  color: var(--hover-color);
+}
+
