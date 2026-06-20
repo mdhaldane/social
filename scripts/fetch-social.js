@@ -87,7 +87,7 @@ async function fetchMastodon() {
     const accountId = account.id;
 
     console.log(`Fetching Mastodon statuses for account ID ${accountId}...`);
-    const statusesUrl = `https://${MASTODON_INSTANCE}/api/v1/accounts/${accountId}/statuses?exclude_replies=true&exclude_reblogs=true`;
+    const statusesUrl = `https://${MASTODON_INSTANCE}/api/v1/accounts/${accountId}/statuses`;
     const statusesRes = await fetch(statusesUrl);
     if (!statusesRes.ok) {
       throw new Error(`Failed to fetch Mastodon statuses: ${statusesRes.statusText}`);
@@ -96,14 +96,26 @@ async function fetchMastodon() {
     const posts = [];
 
     for (const status of statuses) {
+      let targetStatus = status;
+      let isReblog = false;
+      if (status.reblog) {
+        targetStatus = status.reblog;
+        isReblog = true;
+      }
+
       const date = status.created_at;
-      const content = status.content; // HTML string
-      const postUrl = status.url;
+      let content = targetStatus.content; // HTML string
+      const postUrl = targetStatus.url;
+
+      if (isReblog) {
+        // Prepend a line indicating this was a boosted post
+        content = `<div class="boost-header" style="color: #8c8578; font-size: 0.8rem; margin-bottom: 8px;">Boosted @${targetStatus.account.acct}</div>` + content;
+      }
 
       // Extract images
       const images = [];
-      if (status.media_attachments) {
-        const mediaImgs = status.media_attachments.filter(m => m.type === 'image');
+      if (targetStatus.media_attachments) {
+        const mediaImgs = targetStatus.media_attachments.filter(m => m.type === 'image');
         for (const img of mediaImgs) {
           images.push({
             url: img.url,
@@ -115,7 +127,7 @@ async function fetchMastodon() {
       posts.push({
         id: `mastodon-${status.id}`,
         type: 'remote',
-        source: 'Mastodon',
+        source: isReblog ? 'Mastodon (Boost)' : 'Mastodon',
         url: postUrl,
         date: date,
         content: content,

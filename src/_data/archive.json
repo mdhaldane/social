@@ -270,6 +270,24 @@
     "images": []
   },
   {
+    "id": "mastodon-113226104000486827",
+    "type": "remote",
+    "source": "Mastodon",
+    "url": "https://mastodon.social/@mdhaldane/113226104000486827",
+    "date": "2024-09-30T10:47:17.330Z",
+    "content": "<p><span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.social/@arroz\" class=\"u-url mention\">@<span>arroz</span></a></span> I don&#39;t think I know a single person who owned a LaserDisc player, but I remember watching Speed on LaserDisc at CircuitCity. A few years later I bought the Star Wars trilogy on LaserDisc at a yard sale for $1 per disc. I liked the cover art.</p><p>I&#39;m sometimes surprised how much of Asia skipped VHS, though, and went straight to VCD, something else that never caught on in the US.</p>",
+    "images": []
+  },
+  {
+    "id": "mastodon-111238663488623035",
+    "type": "remote",
+    "source": "Mastodon (Boost)",
+    "url": "https://toad.social/@KimPerales/111229375362418918",
+    "date": "2023-10-15T10:55:01.772Z",
+    "content": "<div class=\"boost-header\" style=\"color: #8c8578; font-size: 0.8rem; margin-bottom: 8px;\">Boosted @KimPerales@toad.social</div><p>Corrupt, self-serving, &amp; dangerous <a href=\"https://toad.social/tags/AI\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>AI</span></a> tech titans are influencing MOC. Horizon is part of AI influence that Open Philanthropy has built *closely aligned with effective altruism (SBF)... Read:</p><p><a href=\"https://www.politico.com/news/2023/10/13/open-philanthropy-funding-ai-policy-00121362\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://www.</span><span class=\"ellipsis\">politico.com/news/2023/10/13/o</span><span class=\"invisible\">pen-philanthropy-funding-ai-policy-00121362</span></a></p>",
+    "images": []
+  },
+  {
     "id": "bsky-bafyreiel5vh3vaelh7rbgdfcryp47vvdqzsbuvth6iahvys4qgnbkqw2hu",
     "type": "remote",
     "source": "Bluesky",
@@ -291,5 +309,19 @@
     "date": "2023-09-20T09:28:56.633Z",
     "content": "And this is still a common misperception about the program.",
     "images": []
+  },
+  {
+    "id": "mastodon-110020898513148298",
+    "type": "remote",
+    "source": "Mastodon (Boost)",
+    "url": "https://mastodon.ngo/@sarahemclaugh/110017183473565567",
+    "date": "2023-03-14T09:21:22.882Z",
+    "content": "<div class=\"boost-header\" style=\"color: #8c8578; font-size: 0.8rem; margin-bottom: 8px;\">Boosted @sarahemclaugh@mastodon.ngo</div><p>the latest \"you couldn't even make this up\" out of Hong Kong <a href=\"https://hongkongfp.com/2023/03/10/stand-news-sedition-trial-ex-editor-of-questioned-over-op-ed-likening-hong-kong-to-orwells-nineteen-eighty-four/\" rel=\"nofollow noopener\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">hongkongfp.com/2023/03/10/stan</span><span class=\"invisible\">d-news-sedition-trial-ex-editor-of-questioned-over-op-ed-likening-hong-kong-to-orwells-nineteen-eighty-four/</span></a></p>",
+    "images": [
+      {
+        "url": "https://mastodon.social/media_proxy/110017183717981398/original",
+        "alt": "A former editor of defunct Hong Kong independent news outlet Stand News on trial for sedition has been questioned over an op-ed that compared Hong Kong to the fictional totalitarian regime in George Orwell's Nineteen Eighty-Four. Meanwhile, the judge presiding over the trial asked whether Nineteen Eighty-Four was a book, and what it was about."
+      }
+    ]
   }
 ]
