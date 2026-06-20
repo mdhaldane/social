@@ -73,6 +73,83 @@
       text-decoration: underline;
     }
 
+    /* Lightbox Modal Styles */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(16, 16, 21, 0.95);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border: 1px solid #1c1c24;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
+    }
+
+    .lightbox-modal.active .lightbox-image {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: #1a1a24;
+      color: #D4C5B0;
+      border: 1px solid #D4C5B0;
+      padding: 4px 10px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .lightbox-close:hover {
+      background: #D4C5B0;
+      color: #101015;
+    }
+
+    .lightbox-caption {
+      margin-top: 15px;
+      color: #8c8578;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
     /* Custom Scrollbar for a premium look */
     ::-webkit-scrollbar {
       width: 8px;
@@ -114,6 +191,37 @@
       custom-styles="
         * {
           font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace !important;
+        }
+        /* 1. Hide avatar column links by class or content */
+        a.w-10, 
+        a.h-10, 
+        a.rounded-full, 
+        a:has(img:not([src*='feed_thumbnail']):not([src*='feed_fullsize'])) {
+          display: none !important;
+        }
+        /* 2. Hide avatar images directly if they aren't post photos */
+        img:not([src*='feed_thumbnail']):not([src*='feed_fullsize']) {
+          display: none !important;
+        }
+        /* 3. Remove left margin offset where avatar column used to be */
+        .ml-10 {
+          margin-left: 0 !important;
+        }
+        /* 4. Remove horizontal padding to align content flush with horizontal rules */
+        .p-4, 
+        .px-4, 
+        .p-3 {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        /* 5. Reset max-width restrictions on the post body container */
+        .flex-1, 
+        .flex > div:nth-child(2),
+        div.flex > div[class*='min-w-0'],
+        div[class*='max-w-\[calc'] {
+          max-width: 100% !important;
+          width: 100% !important;
+          flex: 1 1 0% !important;
         }
         :host, 
         .bg-white, 
@@ -161,6 +269,10 @@
           border-radius: 4px !important;
           border: 1px solid #1c1c24 !important;
         }
+        img[src*='feed_thumbnail'], 
+        img[src*='feed_fullsize'] {
+          cursor: zoom-in !important;
+        }
         svg {
           color: #8c8578 !important;
           fill: currentColor !important;
@@ -195,6 +307,108 @@
     <p>Return to <a href="https://matthaldane.com">matthaldane.com</a></p>
   </footer>
 </div>
+
+<script>
+  (function() {
+    // Create and append lightbox HTML elements
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox-modal';
+    lightbox.innerHTML = `
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close lightbox">[X] CLOSE</button>
+        <img class="lightbox-image" src="" alt="Full size image preview">
+        <div class="lightbox-caption">ESC TO CLOSE</div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector('.lightbox-image');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 200); // Clear image src once animation finishes
+    }
+
+    // Event listeners to close the lightbox
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    // Delegate and intercept clicks from the Shadow DOM inside the web component
+    const embedElement = document.querySelector('bsky-embed');
+    if (embedElement) {
+      // Function to strip avatar elements completely from the DOM
+      const stripAvatars = (root) => {
+        if (!root) return;
+        const imgs = root.querySelectorAll('img');
+        imgs.forEach(img => {
+          const src = img.src || img.getAttribute('src') || '';
+          
+          // An image is an avatar if it doesn't have feed_thumbnail or feed_fullsize
+          const isPostImage = src.includes('feed_thumbnail') || src.includes('feed_fullsize');
+          if (!isPostImage && src) {
+            img.removeAttribute('src'); // Prevent browser from downloading the image
+            
+            // Navigate up to find and remove the avatar link container
+            const link = img.closest('a');
+            if (link) {
+              link.remove();
+            } else {
+              img.remove();
+            }
+          }
+        });
+      };
+
+      // Set up observer to capture and strip avatars dynamically as they render
+      const observer = new MutationObserver(() => {
+        stripAvatars(embedElement.shadowRoot);
+      });
+
+      const startObserving = () => {
+        if (embedElement.shadowRoot) {
+          stripAvatars(embedElement.shadowRoot);
+          observer.observe(embedElement.shadowRoot, { childList: true, subtree: true });
+        } else {
+          setTimeout(startObserving, 10); // Poll fast to catch first paint
+        }
+      };
+      startObserving();
+
+      embedElement.addEventListener('click', (event) => {
+        const path = event.composedPath();
+        const img = path.find(el => el.tagName === 'IMG');
+        
+        // Only target post images (URLs containing feed_thumbnail or feed_fullsize) and ignore avatars/etc
+        if (img && (img.src.includes('/feed_thumbnail/') || img.src.includes('/feed_fullsize/'))) {
+          event.preventDefault();
+          event.stopPropagation();
+          
+          // Switch to high-resolution version
+          const fullSizeUrl = img.src.replace('/feed_thumbnail/', '/feed_fullsize/');
+          openLightbox(fullSizeUrl);
+        }
+      });
+    }
+  })();
+</script>
 
 </body>
 </html>
