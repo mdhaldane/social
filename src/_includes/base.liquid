@@ -29,9 +29,127 @@
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize medium-zoom
     mediumZoom('[data-zoomable]', {
       background: '#000000',
       margin: 24
+    });
+
+    // 2. YouTube Inline Player & Auto-linking
+    const posts = document.querySelectorAll('.post-item');
+    const ytRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const urlRegex = /https?:\/\/[^\s<]+/g;
+
+    posts.forEach(post => {
+      const contentEl = post.querySelector('.post-content');
+      const sourceEl = post.querySelector('.post-source');
+      if (!contentEl || !sourceEl) return;
+
+      const source = sourceEl.textContent.toLowerCase();
+
+      // Safe, DOM-based auto-linker for raw text URLs
+      const walk = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          let parent = node.parentElement;
+          while (parent && parent !== contentEl) {
+            const tag = parent.tagName;
+            if (tag === 'A' || tag === 'PRE' || tag === 'CODE' || tag === 'SCRIPT' || tag === 'STYLE') {
+              return NodeFilter.FILTER_REJECT;
+            }
+            parent = parent.parentElement;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      const textNodes = [];
+      let currentNode;
+      while (currentNode = walk.nextNode()) {
+        if (urlRegex.test(currentNode.nodeValue)) {
+          textNodes.push(currentNode);
+        }
+        urlRegex.lastIndex = 0;
+      }
+
+      textNodes.forEach(node => {
+        const text = node.nodeValue;
+        const parent = node.parentElement;
+        if (!parent) return;
+
+        urlRegex.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        let match;
+
+        while ((match = urlRegex.exec(text)) !== null) {
+          const matchIndex = match.index;
+          const url = match[0];
+
+          if (matchIndex > lastIndex) {
+            fragment.appendChild(document.createTextNode(text.substring(lastIndex, matchIndex)));
+          }
+
+          const link = document.createElement('a');
+          link.href = url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = url;
+          fragment.appendChild(link);
+
+          lastIndex = urlRegex.lastIndex;
+        }
+
+        if (lastIndex < text.length) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+        }
+
+        parent.replaceChild(fragment, node);
+      });
+
+      // Check for YouTube links
+      const links = contentEl.querySelectorAll('a');
+      let videoId = null;
+
+      links.forEach(a => {
+        const match = a.href.match(ytRegex);
+        if (match && !videoId) {
+          videoId = match[1];
+        }
+      });
+
+      // If a YouTube video is found, render the inline player facade
+      if (videoId) {
+        const playerContainer = document.createElement('div');
+        playerContainer.className = 'yt-embed-container';
+        
+        const facade = document.createElement('div');
+        facade.className = 'yt-facade';
+        facade.style.backgroundImage = `url('https://i3.ytimg.com/vi/${videoId}/hqdefault.jpg')`;
+        facade.innerHTML = `<button class="yt-play-button">► Play Video</button>`;
+        
+        playerContainer.appendChild(facade);
+        
+        // Append player below the post content, but before any media grid
+        const mediaGrid = post.querySelector('.post-media-grid');
+        if (mediaGrid) {
+          post.insertBefore(playerContainer, mediaGrid);
+        } else {
+          post.appendChild(playerContainer);
+        }
+
+        // Click handler to swap facade with actual autoplay iframe
+        facade.addEventListener('click', () => {
+          const iframe = document.createElement('iframe');
+          iframe.className = 'yt-iframe';
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          iframe.title = 'YouTube video player';
+          iframe.frameBorder = '0';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          
+          playerContainer.replaceChild(iframe, facade);
+        });
+      }
     });
   });
 </script>

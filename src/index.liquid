@@ -24,6 +24,26 @@ description: "A centralized social timeline aggregating posts from Bluesky, Mast
 
       <div class="post-content">{{ item.content }}</div>
 
+      {% if item.external %}
+        {% assign ext_url_lower = item.external.uri | downcase %}
+        {% unless ext_url_lower contains "youtube.com" or ext_url_lower contains "youtu.be" %}
+          <a href="{{ item.external.uri }}" target="_blank" rel="noopener noreferrer" class="external-card">
+            {% if item.external.thumb %}
+              <div class="external-thumb">
+                <img src="{{ item.external.thumb }}" alt="{{ item.external.title }}" loading="lazy" />
+              </div>
+            {% endif %}
+            <div class="external-info">
+              <h4 class="external-title">{{ item.external.title | default: "Link" }}</h4>
+              {% if item.external.description %}
+                <p class="external-description">{{ item.external.description }}</p>
+              {% endif %}
+              <span class="external-url">{{ item.external.uri }}</span>
+            </div>
+          </a>
+        {% endunless %}
+      {% endif %}
+
       {% if item.images and item.images.size > 0 %}
         <div class="post-media-grid" data-count="{{ item.images.size }}">
           {% for img in item.images %}

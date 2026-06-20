@@ -37,7 +37,26 @@ async function fetchBluesky(did) {
         const postId = post.uri.split('/').pop();
         const postUrl = `https://bsky.app/profile/${post.author.handle}/post/${postId}`;
         const date = post.indexedAt;
-        const content = post.record ? post.record.text : '';
+        let content = post.record ? post.record.text : '';
+
+        // Extract external links / embeds (like YouTube card embeds)
+        let external = null;
+        if (post.embed) {
+          if (post.embed.$type === 'app.bsky.embed.external#view' && post.embed.external) {
+            external = post.embed.external;
+          } else if (post.embed.$type === 'app.bsky.embed.recordWithMedia#view' && post.embed.media) {
+            if (post.embed.media.$type === 'app.bsky.embed.external#view' && post.embed.media.external) {
+              external = post.embed.media.external;
+            }
+          }
+        }
+
+        if (external && external.uri) {
+          const hasLink = content.includes(external.uri);
+          if (!hasLink) {
+            content += (content ? '\n\n' : '') + external.uri;
+          }
+        }
 
         // Extract images
         const images = [];
@@ -64,7 +83,13 @@ async function fetchBluesky(did) {
           url: postUrl,
           date: date,
           content: content,
-          images: images
+          images: images,
+          external: external ? {
+            uri: external.uri,
+            title: external.title || '',
+            description: external.description || '',
+            thumb: external.thumb || ''
+          } : null
         });
       }
     }
@@ -124,6 +149,17 @@ async function fetchMastodon() {
         }
       }
 
+      // Extract external card if present
+      let external = null;
+      if (targetStatus.card) {
+        external = {
+          uri: targetStatus.card.url,
+          title: targetStatus.card.title || '',
+          description: targetStatus.card.description || '',
+          thumb: targetStatus.card.image || ''
+        };
+      }
+
       posts.push({
         id: `mastodon-${status.id}`,
         type: 'remote',
@@ -131,7 +167,8 @@ async function fetchMastodon() {
         url: postUrl,
         date: date,
         content: content,
-        images: images
+        images: images,
+        external: external
       });
     }
 

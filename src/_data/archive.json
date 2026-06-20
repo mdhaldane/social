@@ -11,7 +11,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreicpbehsu7aqo3rofxoqjmerpkbztrr4cngyqrd4me6swxbz6kar5i",
         "alt": "A redbox+ dumpster "
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreicbvxsy55yytjysbhbv2klvhgcmiviods5mqzfzoadeujn5qhfi2q",
@@ -19,8 +20,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3m26pa4d2yc2f",
     "date": "2025-10-02T04:20:04.057Z",
-    "content": "Jane Goodall at 90: “It’s no good just talking about what should be done. We’ve got to flipping well do it.”",
-    "images": []
+    "content": "Jane Goodall at 90: “It’s no good just talking about what should be done. We’ve got to flipping well do it.”\n\nhttps://www.nytimes.com/2025/10/01/climate/jane-goodall-interviews.html",
+    "images": [],
+    "external": {
+      "uri": "https://www.nytimes.com/2025/10/01/climate/jane-goodall-interviews.html",
+      "title": "Jane Goodall’s Thoughts for a Reporter: ‘Hope Isn’t Just Wishful Thinking’",
+      "description": "",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihhfyuuw4hcysvfhxup2tv5harade4mjiyf4npxvivdwuldkozegi"
+    }
   },
   {
     "id": "bsky-bafyreielmhnbkba4icm32gubbikyena5wv62azi4j2mhl4wv7a5yniuoba",
@@ -28,8 +35,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3ls3rjbfb722d",
     "date": "2025-06-21T05:01:22.342Z",
-    "content": "A Shenzhen in the desert? SoftBank wants to turn Phoenix into a US AI and robotics hub.",
-    "images": []
+    "content": "A Shenzhen in the desert? SoftBank wants to turn Phoenix into a US AI and robotics hub.\n\nhttps://www.bloomberg.com/news/articles/2025-06-20/masayoshi-son-s-next-bet-a-1-trillion-ai-robotics-hub-in-arizona",
+    "images": [],
+    "external": {
+      "uri": "https://www.bloomberg.com/news/articles/2025-06-20/masayoshi-son-s-next-bet-a-1-trillion-ai-robotics-hub-in-arizona",
+      "title": "Masa Son Pitches $1 Trillion US AI Hub to TSMC, Trump Team",
+      "description": "SoftBank Group Corp. founder Masayoshi Son is seeking to team up with Taiwan Semiconductor Manufacturing Co. to realize what could be his biggest bet yet — a trillion-dollar industrial complex in Ariz...",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihemn6udya7jinh5w5kf6tkxnw6jxnk3yhzi6kx4nggltpd3tlpey"
+    }
   },
   {
     "id": "bsky-bafyreibmw7tb2kw4borittxnmf5gcfrwvgh4e4qnbcr2b3cny6npn7svnq",
@@ -47,7 +60,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreic7ljoly7xsphkoc4oggtvixpuhyjzh25eq4amizifx7eu47kx3pe",
         "alt": ""
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreicg7i7kycafnklccqrtun3wejwwmqig7l2sckk6zx47oerl46eou4",
@@ -55,8 +69,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3lpxznka7ls2o",
     "date": "2025-05-25T06:25:54.044Z",
-    "content": "> “But the British couldn’t break Boston, the New York Yankees couldn’t break Boston and neither can Trump,” [Michael Goldman] says. It is not just Bostonians who should hope he’s right.\nwww.economist.com/united-state...",
-    "images": []
+    "content": "> “But the British couldn’t break Boston, the New York Yankees couldn’t break Boston and neither can Trump,” [Michael Goldman] says. It is not just Bostonians who should hope he’s right.\nwww.economist.com/united-state...\n\nhttps://www.economist.com/united-states/2025/05/18/the-maga-revolution-threatens-americas-most-innovative-place",
+    "images": [],
+    "external": {
+      "uri": "https://www.economist.com/united-states/2025/05/18/the-maga-revolution-threatens-americas-most-innovative-place",
+      "title": "The MAGA revolution threatens America’s most innovative place",
+      "description": "Cuts to funding risk hobbling Boston’s science establishment",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreidtbze6rq3yekmecpw2ypaz76jobw65a6px62mhhebosghselgldu"
+    }
   },
   {
     "id": "bsky-bafyreibfbajlsfyxntik5ymp2pwyah7ofbpm3wp4ea5tlhfbuvfhapexq4",
@@ -74,7 +94,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreifddye4uz4aj2kmoy5zzshdh7zi7tbet224mymd63lp3xty6vr5g4",
         "alt": ""
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreib5w3gmo3u6auj4xrv5vvd4zsmkcwwx37vqm6uyhevqvjubumqi5e",
@@ -88,7 +109,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihxumpeib4wi3b2eb52x3hb7e37u7vmxmew245pwoy753yl6y3biu",
         "alt": "Hong Kong street graffiti saying fuck the CCP"
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreicmnx772thbrema53vjjgwui7iz2jdzvjx24lgqubwb3wrbhaiwmq",
@@ -96,8 +118,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3ln54ufjkcc2j",
     "date": "2025-04-19T02:51:06.177Z",
-    "content": "\"For my kids, when every show is national and everything can be seen everywhere all at once, there can be no such rent in the fabric, no hole through which, seeing Milwaukee Bozo, they can recognize the phoniness of their own. To them, all the clowns are real.\"",
-    "images": []
+    "content": "\"For my kids, when every show is national and everything can be seen everywhere all at once, there can be no such rent in the fabric, no hole through which, seeing Milwaukee Bozo, they can recognize the phoniness of their own. To them, all the clowns are real.\"\n\nhttps://www.wsj.com/arts-culture/television/tv-before-cable-was-a-barren-landscape-it-was-also-magical-8406504a",
+    "images": [],
+    "external": {
+      "uri": "https://www.wsj.com/arts-culture/television/tv-before-cable-was-a-barren-landscape-it-was-also-magical-8406504a",
+      "title": "TV Before Cable Was a Barren Landscape. It Was Also Magical.",
+      "description": "We jammed forks into the antenna, tuned the dial like a radio and stumbled upon unexpected wonders.",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihfgx47s6zkgtgan7au3bum466hxjuqqmivhvzlvq3dvn2ffede5u"
+    }
   },
   {
     "id": "bsky-bafyreic46pa56bnivkuh3g7kyit6r7u3ujz7kbvfqgt57twu7byfln2vju",
@@ -105,8 +133,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3lmtavowrvk23",
     "date": "2025-04-15T04:36:49.479Z",
-    "content": "Duterte has been out of office for less than three years. Attitudes change fast.",
-    "images": []
+    "content": "Duterte has been out of office for less than three years. Attitudes change fast.\n\nhttps://www.scmp.com/week-asia/politics/article/3306488/majority-filipinos-back-icc-trial-duterte-citing-need-accountability-survey",
+    "images": [],
+    "external": {
+      "uri": "https://www.scmp.com/week-asia/politics/article/3306488/majority-filipinos-back-icc-trial-duterte-citing-need-accountability-survey",
+      "title": "Majority of Filipinos want Duterte held to account in ICC drug war case: survey",
+      "description": "Support for Duterte’s drug war once exceeded 80 per cent, but a new poll indicates 62 per cent now want him to stand trial for it.",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiftqye2ojfj7oote2pywv7jbjyuyrcmflbkjjn7pfco3rsdhwuk4q"
+    }
   },
   {
     "id": "bsky-bafyreiblyyitkr7l6fenkegebjl5yodlipyv5vxardaxzlromv6cnkx2lm",
@@ -114,8 +148,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3lm4r4wtca22g",
     "date": "2025-04-06T05:56:05.506Z",
-    "content": "\"President Xi Jinping has long argued that America is too polarised and overstretched to sustain its global role … His paranoid nationalism used to seem like dystopian hyperbole. Now that Mr Trump is committing such wanton self-harm and general destruction, it looks ahead of its time.\"",
-    "images": []
+    "content": "\"President Xi Jinping has long argued that America is too polarised and overstretched to sustain its global role … His paranoid nationalism used to seem like dystopian hyperbole. Now that Mr Trump is committing such wanton self-harm and general destruction, it looks ahead of its time.\"\n\nhttps://www.economist.com/leaders/2025/04/03/how-america-could-end-up-making-china-great-again",
+    "images": [],
+    "external": {
+      "uri": "https://www.economist.com/leaders/2025/04/03/how-america-could-end-up-making-china-great-again",
+      "title": "How America could end up making China great again",
+      "description": "A big beautiful opportunity",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihld7ekhbldv2wuq7pbsjazjlqckoo5dzwwxb7xymww3pnuxq5ixq"
+    }
   },
   {
     "id": "bsky-bafyreiejnnxrhlp72bntb74ks6xc3a4mqjbm2b4k4h2cbgzks4om5el4su",
@@ -123,8 +163,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/matthaldane.com/post/3llxx2imm6s22",
     "date": "2025-04-04T07:58:39.506Z",
-    "content": "I think crypto companies are interested in the idea of fast, anonymous microtransactions for porn over social media. But I've also heard pitches for \"OnlyFans on the blockchain\". Among things you probably don't want to be \"immutable\", I imagine a public ledger of past sex work is up there.",
-    "images": []
+    "content": "I think crypto companies are interested in the idea of fast, anonymous microtransactions for porn over social media. But I've also heard pitches for \"OnlyFans on the blockchain\". Among things you probably don't want to be \"immutable\", I imagine a public ledger of past sex work is up there.\n\nhttps://www.reuters.com/technology/onlyfans-founder-crypto-foundation-submit-late-stage-bid-buy-tiktok-2025-04-02/",
+    "images": [],
+    "external": {
+      "uri": "https://www.reuters.com/technology/onlyfans-founder-crypto-foundation-submit-late-stage-bid-buy-tiktok-2025-04-02/",
+      "title": "OnlyFans founder, crypto foundation submit late-stage bid to buy TikTok",
+      "description": "A startup run by Tim Stokely, founder of adult content social media site OnlyFans, has partnered with a cryptocurrency foundation to submit a late-stage plan to acquire short video app TikTok from Chinese owner ByteDance, the two said on Wednesday.",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreieefphudl5vqvpj3ksbvvmn7trydyhb7fsety533664btnuti7are"
+    }
   },
   {
     "id": "bsky-bafyreigue23msm4262ppphxejtj3s3xb2daqimd5b7fxltxasumuet7hmy",
@@ -142,7 +188,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreifxcr7ipxohflhxuyzkblabfontxngyk4pyc7wk3mqu3ro3wnt73u",
         "alt": "The cover of the book Abundance by Derek Thompson and Ezra Klein"
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreignlt4tqmonvqajvuktomscajxshrc5d4a62pevt7554om3ngvtne",
@@ -150,8 +197,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3llavowh5rs2f",
     "date": "2025-03-26T04:03:04.902Z",
-    "content": "\"Twain is funny and important today because his comedy is a hilarious celebration of our fears, our ineptitude and the glorious mess of being human. When we celebrate Twain, truly see him for who he was, we acknowledge our commonality and we move just a little bit closer together.\"",
-    "images": []
+    "content": "\"Twain is funny and important today because his comedy is a hilarious celebration of our fears, our ineptitude and the glorious mess of being human. When we celebrate Twain, truly see him for who he was, we acknowledge our commonality and we move just a little bit closer together.\"\n\nhttps://youtu.be/Yr8qPKTo8yA?si=vyLWZCW7vIE9w02U",
+    "images": [],
+    "external": {
+      "uri": "https://youtu.be/Yr8qPKTo8yA?si=vyLWZCW7vIE9w02U",
+      "title": "Excerpt from Conan O'Brien's Mark Twain Prize Acceptance Speech",
+      "description": "YouTube video by Conan O'Brien",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiany434axneoyxleukluoldmik2jjddhytgcplsvc5t72wf23ei2q"
+    }
   },
   {
     "id": "bsky-bafyreigckmtmxzhbr4iwngnjpmtvedesbr7i66tbyfv7qeurqk624bkzdi",
@@ -159,8 +212,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/social.matthaldane.com/post/3ll2shlkfdk2t",
     "date": "2025-03-23T17:49:16.151Z",
-    "content": "Dune was great, and I love a good Denis Villeneuve film, but if I'm being honest about the sci-fi film I had the most fun watching last year, it would definitely be Molli and Max in the Future. And the full film is on YouTube apparently.\nyoutu.be/_i_bdv3Ziww?...",
-    "images": []
+    "content": "Dune was great, and I love a good Denis Villeneuve film, but if I'm being honest about the sci-fi film I had the most fun watching last year, it would definitely be Molli and Max in the Future. And the full film is on YouTube apparently.\nyoutu.be/_i_bdv3Ziww?...\n\nhttps://youtu.be/_i_bdv3Ziww?si=kHl7lVwn7QVh-ia7",
+    "images": [],
+    "external": {
+      "uri": "https://youtu.be/_i_bdv3Ziww?si=kHl7lVwn7QVh-ia7",
+      "title": "Molli and Max in the Future (2023) | Full Sci-Fi Rom-Com Movie",
+      "description": "YouTube video by Level 33 Entertainment",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreignd26wt3l7bag4ro445qs2hozazoxjkxxhxpj7cfmlppek5433zm"
+    }
   },
   {
     "id": "bsky-bafyreifa55k7lqbrq4jmivoa3wjyxyu67q65gpbmuyuvm7pv2mbjtrfihi",
@@ -174,7 +233,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreidhda4hoivpiuuslj2xj6kyob2qpoks4yryxjjlayfpnguonnhhcq",
         "alt": ""
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreietxaprh4kw6mdkl5sefs5aie5tndnylqr37iqflu6uff7ogosami",
@@ -200,7 +260,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiegctgueksd5l5estuoq22cfaiipjzfhjcneqccyvupjs25c2qgs4",
         "alt": ""
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreigyxx3jfatfclme6uzonaefvketvjm73twvu2z2hqwflhwihmuhhe",
@@ -226,7 +287,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiaszbr2lwvudu7bpchlyjs62woj4pauemi2mdfdq3njgbxqwbdl6q",
         "alt": ""
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreifkztlcghxiolw7guedmgs2kk6vrpljtl2t7fsbf5u3tivdckjbwi",
@@ -240,7 +302,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreieiv4rz7hdocxlefnb7rwfmm6yab2sgyupxsvakkksuendo6kxdtq",
         "alt": "Owner of a microbrewery in Tainan, Taiwan, wears a baseball cap for the team Arizona Diamondbacks while smiling at patrons."
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreiagjzr3xkihugagxpqpwcodav2r2367p3bqbcprsiqjfugw7eupuq",
@@ -249,7 +312,8 @@
     "url": "https://bsky.app/profile/matthaldane.com/post/3libzib3e722s",
     "date": "2025-02-16T10:27:57.049Z",
     "content": "Amazon is closing another loophole for people who strip DRM from their ebooks to use on other devices. Publishers may appreciate the move, but it's a blow to open platforms.",
-    "images": []
+    "images": [],
+    "external": null
   },
   {
     "id": "bsky-bafyreifwkf6dqpgyxytet35gxatx3s7p5xly6dykmlfyqfiygp77ebsuau",
@@ -258,7 +322,8 @@
     "url": "https://bsky.app/profile/matthaldane.com/post/3lg3jmy5pec25",
     "date": "2025-01-19T09:37:53.449Z",
     "content": "The bipartisan nature of the TikTok ban has become a rorschach test for politically disengaged Americans. Reddit is full of comments blaming Trump for the ban because they think the law started under him (he tried to ban it by executive order, on weak legal footing, which was reversed by Biden).",
-    "images": []
+    "images": [],
+    "external": null
   },
   {
     "id": "bsky-bafyreie7rr2bw4id6pfoijughmuxvaeh4alc3bbqzlqeoaogtadztuh6iu",
@@ -266,8 +331,14 @@
     "source": "Bluesky",
     "url": "https://bsky.app/profile/matthaldane.com/post/3lccpdczi6c2u",
     "date": "2024-12-02T08:27:47.760Z",
-    "content": "Bitcoin had a pretty wild in China: It once had the market cornered, producing the most bitcoin globally, then it banned cryptocurrencies in favor of blockchain sans crypto. Now Xi Jinping doesn't talk about blockchain anymore and Trump fever has enveloped the industry. www.scmp.com/tech/blockch...",
-    "images": []
+    "content": "Bitcoin had a pretty wild in China: It once had the market cornered, producing the most bitcoin globally, then it banned cryptocurrencies in favor of blockchain sans crypto. Now Xi Jinping doesn't talk about blockchain anymore and Trump fever has enveloped the industry. www.scmp.com/tech/blockch...\n\nhttps://www.scmp.com/tech/blockchain/article/3288731/bitcoin-was-once-dominated-china-trump-bump-shifting-momentum-us?module=perpetual_scroll_0&pgtype=article",
+    "images": [],
+    "external": {
+      "uri": "https://www.scmp.com/tech/blockchain/article/3288731/bitcoin-was-once-dominated-china-trump-bump-shifting-momentum-us?module=perpetual_scroll_0&pgtype=article",
+      "title": "Decentralised kingdom: bitcoin’s Trump bump and how China lost its crypto crown",
+      "description": "As the world’s factory, China cornered the market on bitcoin mining, leading to a flurry of crypto business activity before a harsh crackdown in 2021.",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreiehabj35ykjgntussjvsu67ix2mmpxpwvvavenqr7auat5mtsgaaq"
+    }
   },
   {
     "id": "mastodon-113226104000486827",
@@ -276,7 +347,8 @@
     "url": "https://mastodon.social/@mdhaldane/113226104000486827",
     "date": "2024-09-30T10:47:17.330Z",
     "content": "<p><span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.social/@arroz\" class=\"u-url mention\">@<span>arroz</span></a></span> I don&#39;t think I know a single person who owned a LaserDisc player, but I remember watching Speed on LaserDisc at CircuitCity. A few years later I bought the Star Wars trilogy on LaserDisc at a yard sale for $1 per disc. I liked the cover art.</p><p>I&#39;m sometimes surprised how much of Asia skipped VHS, though, and went straight to VCD, something else that never caught on in the US.</p>",
-    "images": []
+    "images": [],
+    "external": null
   },
   {
     "id": "mastodon-111238663488623035",
@@ -285,7 +357,13 @@
     "url": "https://toad.social/@KimPerales/111229375362418918",
     "date": "2023-10-15T10:55:01.772Z",
     "content": "<div class=\"boost-header\" style=\"color: #8c8578; font-size: 0.8rem; margin-bottom: 8px;\">Boosted @KimPerales@toad.social</div><p>Corrupt, self-serving, &amp; dangerous <a href=\"https://toad.social/tags/AI\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>AI</span></a> tech titans are influencing MOC. Horizon is part of AI influence that Open Philanthropy has built *closely aligned with effective altruism (SBF)... Read:</p><p><a href=\"https://www.politico.com/news/2023/10/13/open-philanthropy-funding-ai-policy-00121362\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://www.</span><span class=\"ellipsis\">politico.com/news/2023/10/13/o</span><span class=\"invisible\">pen-philanthropy-funding-ai-policy-00121362</span></a></p>",
-    "images": []
+    "images": [],
+    "external": {
+      "uri": "https://www.politico.com/news/2023/10/13/open-philanthropy-funding-ai-policy-00121362",
+      "title": "How a billionaire-backed network of AI advisers took over Washington",
+      "description": "A sprawling network spread across Congress, federal agencies and think tanks is pushing policymakers to put AI apocalypse at the top of the agenda — potentially boxing out other worries and benefiting top AI companies with ties to the network.",
+      "thumb": "https://files.mastodon.social/cache/preview_cards/images/075/875/197/original/17e5082a2e043228.jpeg"
+    }
   },
   {
     "id": "bsky-bafyreiel5vh3vaelh7rbgdfcryp47vvdqzsbuvth6iahvys4qgnbkqw2hu",
@@ -299,7 +377,8 @@
         "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreibiol6afjmcyu7m7c7xg2yqva4p6fp5wqcbmp2rhvmc35s6dvecya",
         "alt": ""
       }
-    ]
+    ],
+    "external": null
   },
   {
     "id": "bsky-bafyreifpgdiulofzrvtv437tgq3qzknzuvmmu3qmhv35d6ml5ce4ipz3yi",
@@ -308,7 +387,8 @@
     "url": "https://bsky.app/profile/matthaldane.com/post/3k7sw2lt5pi26",
     "date": "2023-09-20T09:28:56.633Z",
     "content": "And this is still a common misperception about the program.",
-    "images": []
+    "images": [],
+    "external": null
   },
   {
     "id": "mastodon-110020898513148298",
@@ -322,6 +402,12 @@
         "url": "https://mastodon.social/media_proxy/110017183717981398/original",
         "alt": "A former editor of defunct Hong Kong independent news outlet Stand News on trial for sedition has been questioned over an op-ed that compared Hong Kong to the fictional totalitarian regime in George Orwell's Nineteen Eighty-Four. Meanwhile, the judge presiding over the trial asked whether Nineteen Eighty-Four was a book, and what it was about."
       }
-    ]
+    ],
+    "external": {
+      "uri": "https://hongkongfp.com/2023/03/10/stand-news-sedition-trial-ex-editor-of-questioned-over-op-ed-likening-hong-kong-to-orwells-nineteen-eighty-four/",
+      "title": "Stand News sedition trial: Ex-editor questioned over op-ed likening Hong Kong to Orwell’s ‘Nineteen Eighty-Four’",
+      "description": "A former editor of defunct Hong Kong independent news outlet Stand News on trial for sedition has been questioned over an op-ed that compared Hong Kong to the fictional totalitarian regime in George Orwell’s Nineteen Eighty-Four. Meanwhile, the judge presiding over the trial asked whether Nineteen Eighty-Four was a book, and what it was about. […]",
+      "thumb": ""
+    }
   }
 ]
