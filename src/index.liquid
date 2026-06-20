@@ -22,9 +22,7 @@ description: "A centralized social timeline aggregating posts from Bluesky, Mast
         </span>
       </header>
 
-      <div class="post-content">
-        {{ item.content }}
-      </div>
+      <div class="post-content">{{ item.content }}</div>
 
       {% if item.images and item.images.size > 0 %}
         <div class="post-media-grid" data-count="{{ item.images.size }}">
