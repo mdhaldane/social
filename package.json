@@ -4,8 +4,8 @@
   "description": "IndieWeb Microblog powered by Eleventy (11ty)",
   "main": "index.js",
   "scripts": {
+    "prebuild": "node scripts/fetch-social.js",
     "build": "eleventy",
-    "serve": "eleventy --serve",
     "start": "eleventy --serve"
   },
   "keywords": [],
@@ -16,5 +16,14 @@
   },
   "devDependencies": {
     "dotenv": "^16.4.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdhaldane/social.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mdhaldane/social/issues"
+  },
+  "homepage": "https://github.com/mdhaldane/social#readme"
 }

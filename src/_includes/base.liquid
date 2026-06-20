@@ -1,103 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | default: "Matt Haldane | Microblog" }}</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Matt Haldane's self-hosted decentralized microblog. Powered by Eleventy and Webmention.">
-    <meta name="author" content="Matt Haldane">
-    <meta property="og:title" content="{{ title | default: 'Matt Haldane | Microblog' }}">
-    <meta property="og:description" content="Matt Haldane's self-hosted decentralized microblog. Powered by Eleventy and Webmention.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://matthaldane.com{{ page.url }}">
-    
-    <!-- CSS and Fonts -->
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
-    
-    <!-- IndieWeb Identity & Webmention Plumbing -->
-    <link rel="webmention" href="https://webmention.io/matthaldane.com/webmention" />
-    <link rel="pingback" href="https://webmention.io/matthaldane.com/xmlrpc" />
-    <link rel="me" href="https://github.com/matthaldane" />
-  </head>
-  <body>
-    <header class="masthead">
-      <div class="container masthead-inner">
-        <a href="https://matthaldane.com/" class="site-title">Matt Haldane</a>
-        <nav>
-          <ul class="masthead__menu">
-            <li class="masthead__menu-item"><a href="https://matthaldane.com/">Main Site</a></li>
-            <li class="masthead__menu-item"><a href="{{ '/' | url }}">Microblog</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default: "Matt Haldane | Social Dashboard" }}</title>
+  <meta name="description" content="{{ description | default: 'Centralized microblog and social dashboard for Matt Haldane, aggregating posts from Bluesky, Mastodon, and local notes.' }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
-    <main class="container">
-      {{ content }}
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>&copy; {{ "now" | date: "%Y" }} <a href="https://matthaldane.com/">Matt Haldane</a>. Built with <a href="https://11ty.dev/">Eleventy</a> and <a href="https://webmention.io/">Webmention</a>.</p>
-      </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal">
-      <button id="lightbox-close" aria-label="Close lightbox">&times;</button>
-      <img id="lightbox-img" src="" alt="Lightbox Zoom" />
+<div class="container">
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="https://matthaldane.com" class="site-title">Matt Haldane</a>
+      <span class="site-subtitle">/ social</span>
     </div>
+  </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('lightbox-modal');
-        const modalImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('lightbox-close');
+  <main id="main-content">
+    {{ content }}
+  </main>
 
-        // Find all images within post contents
-        const postImages = document.querySelectorAll('.e-content img');
+  <footer class="footer">
+    <p>Return to <a href="https://matthaldane.com">matthaldane.com</a></p>
+  </footer>
+</div>
 
-        postImages.forEach(img => {
-          img.addEventListener('click', () => {
-            modalImg.src = img.src;
-            modalImg.alt = img.alt || 'Zoomed image';
-            modal.style.display = 'flex';
-            
-            // Allow display change to register before setting active transition
-            setTimeout(() => {
-              modal.classList.add('active');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-          });
-        });
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    mediumZoom('[data-zoomable]', {
+      background: '#000000',
+      margin: 24
+    });
+  });
+</script>
 
-        const closeModal = () => {
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-          setTimeout(() => {
-            if (!modal.classList.contains('active')) {
-              modal.style.display = 'none';
-              modalImg.src = '';
-            }
-          }, 250);
-        };
-
-        // Close on clicking backdrop
-        modal.addEventListener('click', (e) => {
-          if (e.target !== modalImg) {
-            closeModal();
-          }
-        });
-
-        // Close on escape key press
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-          }
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>

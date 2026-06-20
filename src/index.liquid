@@ -1,20 +1,42 @@
 ---
 layout: base.liquid
-title: "Matt Haldane | Microblog"
+title: "Matt Haldane | Social Feed"
+description: "A centralized social timeline aggregating posts from Bluesky, Mastodon, and local IndieWeb notes."
 ---
-<h1 class="page-title">Micro-Notes</h1>
 
-<div class="posts-list">
-  {%- for post in collections.posts reversed -%}
-    <article class="h-entry">
-      <div class="e-content">
-        {{ post.content }}
+<div class="feed-container">
+  {% for item in collections.unifiedFeed %}
+    <article class="post-item">
+      <header class="post-meta">
+        <span class="post-source">
+          {% if item.type == 'local' %}
+            local
+          {% else %}
+            {{ item.source }}
+          {% endif %}
+        </span>
+        <span class="post-date">
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+            {{ item.date | dateToISO }}
+          </a>
+        </span>
+      </header>
+
+      <div class="post-content">
+        {{ item.content }}
       </div>
-      <a href="{{ post.url | url }}" class="u-url">
-        <time class="dt-published" datetime="{{ post.date | dateToISO }}">{{ post.date | date: "%b %d, %Y @ %H:%M" }}</time>
-      </a>
+
+      {% if item.images and item.images.size > 0 %}
+        <div class="post-media-grid" data-count="{{ item.images.size }}">
+          {% for img in item.images %}
+            <img src="{{ img.url }}" alt="{{ img.alt }}" loading="lazy" data-zoomable />
+          {% endfor %}
+        </div>
+      {% endif %}
     </article>
-  {%- else -%}
-    <p>No micro-notes published yet.</p>
-  {%- endfor -%}
+  {% else %}
+    <p style="text-align: center; color: #8c8578; padding: 40px 0;">
+      No posts found in the feed. Run the prebuild script to fetch remote posts.
+    </p>
+  {% endfor %}
 </div>

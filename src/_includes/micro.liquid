@@ -1,61 +1,53 @@
 ---
 layout: base.liquid
 ---
-<article class="h-entry">
-  <div class="e-content">
+<article class="post-item">
+  <div class="post-meta">
+    <span class="post-source">{{ source | default: 'social.matthaldane.com' }}</span>
+    <span class="post-date"><a href="{{ page.url }}">{{ date | dateToISO }}</a></span>
+  </div>
+  <div class="post-content">
     {{ content }}
   </div>
-  <a href="{{ page.url | url }}" class="u-url">
-    <time class="dt-published" datetime="{{ page.date | dateToISO }}">{{ page.date | date: "%b %d, %Y @ %H:%M" }}</time>
-  </a>
-
-  <!-- Webmentions Section -->
-  {%- assign postUrlWithPrefix = page.url | url -%}
-  {%- assign postAbsoluteUrl = "https://matthaldane.com" | append: postUrlWithPrefix -%}
-  {%- assign postMentions = webmentions[postAbsoluteUrl] -%}
-
-  {%- if postMentions and postMentions.size > 0 -%}
-    <div class="webmentions">
-      <h3>Interactions</h3>
-      <ul class="webmentions-list">
-        {%- for mention in postMentions -%}
-          <li class="webmention-item">
-            {%- if mention.author.photo -%}
-              <img class="webmention-avatar" src="{{ mention.author.photo }}" alt="{{ mention.author.name }}" loading="lazy" />
-            {%- else -%}
-              <img class="webmention-avatar" src="{{ '/css/avatar-placeholder.png' | url }}" alt="Placeholder Avatar" />
-            {%- endif -%}
-            <div class="webmention-content">
-              <div class="webmention-header-info">
-                <span class="webmention-author">
-                  {%- if mention.author.url -%}
-                    <a href="{{ mention.author.url }}" target="_blank" rel="noopener noreferrer">{{ mention.author.name | default: "Anonymous" }}</a>
-                  {%- else -%}
-                    {{ mention.author.name | default: "Anonymous" }}
-                  {%- endif -%}
-                </span>
-                <span class="webmention-type">
-                  {%- if mention.type == "like" -%}
-                    liked this post
-                  {%- elsif mention.type == "repost" -%}
-                    reposted this
-                  {%- else -%}
-                    replied
-                  {%- endif -%}
-                </span>
-                {%- if mention.published -%}
-                  <time class="webmention-meta" datetime="{{ mention.published | dateToISO }}">{{ mention.published | date: "%b %d, %Y" }}</time>
-                {%- endif -%}
-              </div>
-              {%- if mention.content and mention.content.value -%}
-                <div class="webmention-body">
-                  {{ mention.content.value }}
-                </div>
-              {%- endif -%}
-            </div>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-  {%- endif -%}
 </article>
+
+<section class="webmentions">
+  <h2 class="webmentions-title">Replies &amp; Likes</h2>
+  {% assign absoluteUrl = page.url | prepend: "https://social.matthaldane.com" %}
+  
+  {% assign hasMentions = false %}
+  <div class="webmentions-list">
+    {% for mention in webmentions %}
+      {% if mention["wm-target"] == absoluteUrl %}
+        {% assign hasMentions = true %}
+        <div class="webmention-item">
+          {% if mention.author.photo %}
+            <img class="webmention-avatar" src="{{ mention.author.photo }}" alt="{{ mention.author.name }}" loading="lazy" />
+          {% else %}
+            <div class="webmention-avatar" style="background-color: #1a1a24;"></div>
+          {% endif %}
+          <div class="webmention-body">
+            <div class="webmention-meta">
+              <a class="webmention-author" href="{{ mention.author.url }}" target="_blank" rel="noopener noreferrer">
+                {{ mention.author.name | default: "Anonymous" }}
+              </a>
+              {% if mention.published %}
+                on {{ mention.published | dateToISO }}
+              {% endif %}
+              • <span class="webmention-type">{{ mention["wm-property"] | replace: "in-reply-to", "replied" | replace: "like-of", "liked" | replace: "repost-of", "reposted" }}</span>
+            </div>
+            {% if mention.content and mention.content.text %}
+              <div class="webmention-content">
+                {{ mention.content.text }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if hasMentions == false %}
+    <p style="color: #8c8578; font-size: 0.9rem;">No replies or likes yet.</p>
+  {% endif %}
+</section>
