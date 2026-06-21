@@ -179,6 +179,95 @@ async function fetchMastodon() {
   }
 }
 
+function parseMarkdown(md) {
+  if (!md) return '';
+  let html = md
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  // Headings
+  html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+  html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // Italic
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+  // Paragraphs
+  const paragraphs = html.split(/\r?\n\r?\n/);
+  html = paragraphs.map(p => {
+    p = p.trim();
+    if (!p) return '';
+    if (p.startsWith('<h1') || p.startsWith('<h2') || p.startsWith('<h3')) {
+      return p;
+    }
+    return `<p>${p.replace(/\r?\n/g, '<br />')}</p>`;
+  }).filter(Boolean).join('\n');
+
+  return html;
+}
+
+async function fetchWhiteWind(did) {
+  try {
+    const handleMap = {
+      'did:plc:dhqhylu42opraylmcwlkunvj': 'matthaldane.com',
+      'did:plc:j2p5gvo2hg7fxtnypmwqaq7h': 'social.matthaldane.com'
+    };
+    const handle = handleMap[did] || did;
+
+    const url = `https://bsky.social/xrpc/com.atproto.repo.listRecords?repo=${did}&collection=com.whtwnd.blog.entry`;
+    console.log(`Fetching WhiteWind blog entries for ${handle}...`);
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch WhiteWind blog entries for ${handle}: ${res.statusText}`);
+    }
+    const data = await res.json();
+    const posts = [];
+
+    if (data.records) {
+      for (const record of data.records) {
+        const val = record.value;
+        if (!val || !val.content) continue;
+
+        const recordKey = record.uri.split('/').pop();
+        const postUrl = `https://whtwnd.com/${handle}/${recordKey}`;
+        const date = val.createdAt;
+
+        // Title and content HTML formatting
+        const titleHtml = val.title ? `<h2 class="blog-title" style="margin-top: 0; margin-bottom: 12px; color: #D4C5B0; font-size: 1.15rem; font-weight: 600;"><a href="${postUrl}" target="_blank" rel="noopener noreferrer">${val.title}</a></h2>` : '';
+        const bodyHtml = parseMarkdown(val.content);
+        const contentHtml = titleHtml + bodyHtml;
+
+        const images = [];
+        if (val.ogp && val.ogp.url) {
+          images.push({
+            url: val.ogp.url,
+            alt: val.title || 'Blog post image'
+          });
+        }
+
+        posts.push({
+          id: `whtwnd-${record.cid || recordKey}`,
+          type: 'remote',
+          source: 'WhiteWind',
+          url: postUrl,
+          date: date,
+          content: contentHtml,
+          images: images,
+          external: null
+        });
+      }
+    }
+    return posts;
+  } catch (error) {
+    console.error(`Error fetching WhiteWind for ${did}:`, error);
+    return [];
+  }
+}
+
 async function main() {
   // Load existing archive
   let archive = [];
@@ -194,6 +283,7 @@ async function main() {
   // Fetch from all sources
   const fetchPromises = [
     ...BLUESKY_DIDS.map(did => fetchBluesky(did)),
+    ...BLUESKY_DIDS.map(did => fetchWhiteWind(did)),
     fetchMastodon()
   ];
 
