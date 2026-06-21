@@ -3,8 +3,7 @@ name: Deploy Eleventy to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - master
+      - dashboard
   schedule:
     - cron: '0 */6 * * *'  # Automatically rebuild every 6 hours to pull fresh webmentions
   workflow_dispatch:
@@ -38,7 +37,7 @@ jobs:
         run: npm ci || npm install
 
       - name: Build with Eleventy
-        run: npx @11ty/eleventy --pathprefix=/microblog/
+        run: npm run build
         env:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
