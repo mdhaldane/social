@@ -10,12 +10,14 @@
 <body>
 
 <div class="container">
+  {% if page.url != "/" %}
   <header class="masthead">
     <div class="masthead-inner">
       <a href="https://matthaldane.com" class="site-title">Matt Haldane</a>
       <span class="site-subtitle">/ social</span>
     </div>
   </header>
+  {% endif %}
 
   <main id="main-content">
     {{ content }}

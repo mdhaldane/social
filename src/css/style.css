@@ -412,3 +412,129 @@ body {
     border-bottom: 1px solid #1c1c24;
   }
 }
+
+/* Profile Header Styling */
+.profile-header {
+  border: 1px solid #1c1c24;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #0b0b0f;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.profile-banner {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid #1c1c24;
+}
+
+.profile-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-info-container {
+  padding: 0 20px 20px 20px;
+  position: relative;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  margin-top: -45px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #0b0b0f;
+  box-shadow: 0 0 0 1px #1c1c24;
+  background-color: #101015;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-name-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-display-name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #E8E3D3;
+}
+
+.profile-handle {
+  font-size: 0.8rem;
+  color: #8c8578;
+}
+
+.profile-bio {
+  margin: 4px 0 8px 0;
+  font-size: 0.95rem;
+  color: #D4C5B0;
+  line-height: 1.5;
+}
+
+.profile-meta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: #8c8578;
+  border-top: 1px solid #1c1c24;
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.profile-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-meta-item a {
+  color: #D4C5B0;
+  text-decoration: none;
+}
+
+.profile-meta-item a:hover {
+  color: #dfd4c4;
+  text-decoration: underline;
+}
+
+.profile-meta-item .icon {
+  color: #8c8578;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .profile-banner {
+    height: 120px;
+  }
+  .profile-avatar-wrapper {
+    margin-top: -35px;
+  }
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .profile-meta-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

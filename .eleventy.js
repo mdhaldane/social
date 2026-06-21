@@ -2,8 +2,9 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function(eleventyConfig) {
-  // Passthrough copy for CSS
+  // Passthrough copy for CSS and Images
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/images");
 
   // Date formatting filter
   eleventyConfig.addFilter("dateToISO", function(dateVal) {

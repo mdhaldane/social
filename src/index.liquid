@@ -4,6 +4,33 @@ title: "Matt Haldane | Social Feed"
 description: "A centralized social timeline aggregating posts from Bluesky, Mastodon, and local IndieWeb notes."
 ---
 
+<div class="profile-header">
+  <div class="profile-banner">
+    <img src="/images/banner.jpg" alt="Profile Banner" />
+  </div>
+  <div class="profile-info-container">
+    <div class="profile-avatar-wrapper">
+      <img class="profile-avatar" src="/images/avatar.png" alt="Matt Haldane" />
+    </div>
+    <div class="profile-details">
+      <div class="profile-name-group">
+        <h1 class="profile-display-name">Matt Haldane</h1>
+      </div>
+      <p class="profile-bio">At a glance I can distinguish China from Arizona</p>
+      <div class="profile-meta-links">
+        <span class="profile-meta-item">
+          <svg class="icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <a href="https://matthaldane.com" target="_blank" rel="noopener noreferrer">matthaldane.com</a>
+        </span>
+        <span class="profile-meta-item">
+          <svg class="icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <a href="https://mastodon.social/@mdhaldane" target="_blank" rel="noopener noreferrer">Mastodon</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="feed-container">
   {% for item in collections.unifiedFeed %}
     <article class="post-item">
