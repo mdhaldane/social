@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+require('dotenv').config();
 
 module.exports = function(eleventyConfig) {
   // Passthrough copy for CSS and Images
