@@ -409,5 +409,30 @@
       "description": "A former editor of defunct Hong Kong independent news outlet Stand News on trial for sedition has been questioned over an op-ed that compared Hong Kong to the fictional totalitarian regime in George Orwell’s Nineteen Eighty-Four. Meanwhile, the judge presiding over the trial asked whether Nineteen Eighty-Four was a book, and what it was about. […]",
       "thumb": ""
     }
+  },
+  {
+    "id": "blog-create-pleroma-server",
+    "type": "remote",
+    "source": "Blog",
+    "url": "https://www.matthaldane.com/2022/11/06/create-pleroma-server.html",
+    "date": "2022-11-06T00:00:00+00:00",
+    "content": "\n        <h2 class=\"blog-title\" style=\"margin-top: 0; margin-bottom: 8px; font-size: 1.15rem; font-weight: 600;\"><a href=\"https://www.matthaldane.com/2022/11/06/create-pleroma-server.html\" target=\"_blank\" rel=\"noopener noreferrer\">Create your own Twitter-like Pleroma server to follow Mastodon friends</a></h2>\n        <p>Update: I’ve deleted my Pleroma instance and forwarded the URL to my Mastodon.social account . I still think Pleroma is great for how lightweight it is, but it lacks some important features of Mastodon, such as full export of all your data, including posts. For those still int...</p>\n        <p style=\"margin-top: 12px; margin-bottom: 0; font-size: 0.85rem;\"><a href=\"https://www.matthaldane.com/2022/11/06/create-pleroma-server.html\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #D4C5B0; text-decoration: none;\">Read full post →</a></p>\n      ",
+    "images": [
+      {
+        "url": "https://matthaldane.com/assets/images/pleroma-soapbox-example.png",
+        "alt": "You can make pleroma look like Twitter"
+      }
+    ],
+    "external": null
+  },
+  {
+    "id": "blog-banned-chinese-books-on-libgen",
+    "type": "remote",
+    "source": "Blog",
+    "url": "https://www.matthaldane.com/2022/04/16/banned-chinese-books-on-libgen.html",
+    "date": "2022-04-16T00:00:00+00:00",
+    "content": "\n        <h2 class=\"blog-title\" style=\"margin-top: 0; margin-bottom: 8px; font-size: 1.15rem; font-weight: 600;\"><a href=\"https://www.matthaldane.com/2022/04/16/banned-chinese-books-on-libgen.html\" target=\"_blank\" rel=\"noopener noreferrer\">Banned Chinese books on Library Genesis</a></h2>\n        <p>My latest story for the South China Morning Post – Web3 tech helps banned books on piracy site Library Genesis slip through the Great Firewall’s cracks, but for how long? – goes over the impact that Web3 could have on censorship in the context of shadow libraries. Shadow libra...</p>\n        <p style=\"margin-top: 12px; margin-bottom: 0; font-size: 0.85rem;\"><a href=\"https://www.matthaldane.com/2022/04/16/banned-chinese-books-on-libgen.html\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #D4C5B0; text-decoration: none;\">Read full post →</a></p>\n      ",
+    "images": [],
+    "external": null
   }
 ]

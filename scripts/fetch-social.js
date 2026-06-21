@@ -268,6 +268,97 @@ async function fetchWhiteWind(did) {
   }
 }
 
+async function fetchBlog() {
+  try {
+    const url = 'https://matthaldane.com/feed.xml';
+    console.log('Fetching blog entries from matthaldane.com...');
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blog feed: ${res.statusText}`);
+    }
+    const xml = await res.text();
+    const posts = [];
+    const entryRegex = /<entry>([\s\S]*?)<\/entry>/g;
+    let match;
+
+    while ((match = entryRegex.exec(xml)) !== null) {
+      const entry = match[1];
+
+      const titleMatch = entry.match(/<title[^>]*>([\s\S]*?)<\/title>/);
+      let title = titleMatch ? titleMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/, '$1').trim() : '';
+      title = title.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+      const linkMatch = entry.match(/<link[^>]*href=["']([^"']*)["']/);
+      const link = linkMatch ? linkMatch[1] : '';
+
+      const dateMatch = entry.match(/<(?:published|updated)[^>]*>([\s\S]*?)<\/(?:published|updated)>/);
+      const date = dateMatch ? dateMatch[1].trim() : '';
+
+      const idMatch = entry.match(/<id>([\s\S]*?)<\/id>/);
+      const idVal = idMatch ? idMatch[1].trim() : link;
+      const id = 'blog-' + idVal.split('/').filter(Boolean).pop();
+
+      const contentMatch = entry.match(/<content[^>]*>([\s\S]*?)<\/content>/) || entry.match(/<summary[^>]*>([\s\S]*?)<\/summary>/);
+      let rawContent = contentMatch ? contentMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/, '$1').trim() : '';
+
+      rawContent = rawContent
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'");
+
+      // Extract images from content block
+      const images = [];
+      const imgRegex = /<img[^>]+src=["']([^"']*)["'][^>]*alt=["']([^"']*)["']/g;
+      let imgMatch;
+      while ((imgMatch = imgRegex.exec(rawContent)) !== null) {
+        let imgSrc = imgMatch[1];
+        if (imgSrc.startsWith('/')) {
+          imgSrc = 'https://matthaldane.com' + imgSrc;
+        }
+        images.push({
+          url: imgSrc,
+          alt: imgMatch[2] || ''
+        });
+      }
+
+      // Strip tags for excerpt
+      let excerpt = rawContent
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      if (excerpt.length > 280) {
+        excerpt = excerpt.substring(0, 277) + '...';
+      }
+
+      // Format blog post html layout
+      const contentHtml = `
+        <h2 class="blog-title" style="margin-top: 0; margin-bottom: 8px; font-size: 1.15rem; font-weight: 600;"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h2>
+        <p>${excerpt}</p>
+        <p style="margin-top: 12px; margin-bottom: 0; font-size: 0.85rem;"><a href="${link}" target="_blank" rel="noopener noreferrer" style="color: #D4C5B0; text-decoration: none;">Read full post →</a></p>
+      `;
+
+      posts.push({
+        id: id,
+        type: 'remote',
+        source: 'Blog',
+        url: link,
+        date: date,
+        content: contentHtml,
+        images: images,
+        external: null
+      });
+    }
+
+    return posts;
+  } catch (error) {
+    console.error('Error fetching blog feed:', error);
+    return [];
+  }
+}
+
 async function main() {
   // Load existing archive
   let archive = [];
@@ -284,6 +375,7 @@ async function main() {
   const fetchPromises = [
     ...BLUESKY_DIDS.map(did => fetchBluesky(did)),
     ...BLUESKY_DIDS.map(did => fetchWhiteWind(did)),
+    fetchBlog(),
     fetchMastodon()
   ];
 
