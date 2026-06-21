@@ -4,7 +4,7 @@ layout: base.liquid
 <article class="post-item">
   <div class="post-meta">
     <span class="post-source">{{ source | default: 'social.matthaldane.com' }}</span>
-    <span class="post-date"><a href="{{ page.url }}">{{ date | dateToISO }}</a></span>
+    <span class="post-date"><a href="{{ page.url }}"><time class="local-date" datetime="{{ date | dateToISO }}">{{ date | dateToISO }}</time></a></span>
   </div>
   <div class="post-content">
     {{ content }}
@@ -32,7 +32,7 @@ layout: base.liquid
                 {{ mention.author.name | default: "Anonymous" }}
               </a>
               {% if mention.published %}
-                on {{ mention.published | dateToISO }}
+                on <time class="local-date" datetime="{{ mention.published | dateToISO }}">{{ mention.published | dateToISO }}</time>
               {% endif %}
               • <span class="webmention-type">{{ mention["wm-property"] | replace: "in-reply-to", "replied" | replace: "like-of", "liked" | replace: "repost-of", "reposted" }}</span>
             </div>

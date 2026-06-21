@@ -153,6 +153,29 @@
         });
       }
     });
+
+    // 3. Localize Timestamps to Browser's Local Timezone
+    const timeElements = document.querySelectorAll('time.local-date');
+    const dateFormatter = new Intl.DateTimeFormat(undefined, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false // matches the technical terminal aesthetic
+    });
+    timeElements.forEach(el => {
+      const utcStr = el.getAttribute('datetime');
+      if (!utcStr) return;
+      try {
+        const date = new Date(utcStr);
+        if (!isNaN(date.getTime())) {
+          el.textContent = dateFormatter.format(date);
+        }
+      } catch (e) {
+        console.error('Error formatting date:', e);
+      }
+    });
   });
 </script>
 

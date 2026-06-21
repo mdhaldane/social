@@ -48,7 +48,7 @@ description: "A centralized social timeline aggregating posts from Bluesky, Mast
         </span>
         <span class="post-date">
           <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
-            {{ item.date | dateToISO }}
+            <time class="local-date" datetime="{{ item.date | dateToISO }}">{{ item.date | dateToISO }}</time>
           </a>
         </span>
       </header>
