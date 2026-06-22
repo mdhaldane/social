@@ -89,7 +89,12 @@ async function fetchBluesky(did) {
             title: external.title || '',
             description: external.description || '',
             thumb: external.thumb || ''
-          } : null
+          } : null,
+          interactions: {
+            likes: post.likeCount || 0,
+            reposts: post.repostCount || 0,
+            replies: post.replyCount || 0
+          }
         });
       }
     }
@@ -168,7 +173,12 @@ async function fetchMastodon() {
         date: date,
         content: content,
         images: images,
-        external: external
+        external: external,
+        interactions: {
+          likes: targetStatus.favourites_count || 0,
+          reposts: targetStatus.reblogs_count || 0,
+          replies: targetStatus.replies_count || 0
+        }
       });
     }
 

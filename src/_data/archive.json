@@ -12,7 +12,12 @@
         "alt": "A redbox+ dumpster "
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreicbvxsy55yytjysbhbv2klvhgcmiviods5mqzfzoadeujn5qhfi2q",
@@ -27,6 +32,11 @@
       "title": "Jane Goodall’s Thoughts for a Reporter: ‘Hope Isn’t Just Wishful Thinking’",
       "description": "",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihhfyuuw4hcysvfhxup2tv5harade4mjiyf4npxvivdwuldkozegi"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -42,6 +52,11 @@
       "title": "Masa Son Pitches $1 Trillion US AI Hub to TSMC, Trump Team",
       "description": "SoftBank Group Corp. founder Masayoshi Son is seeking to team up with Taiwan Semiconductor Manufacturing Co. to realize what could be his biggest bet yet — a trillion-dollar industrial complex in Ariz...",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihemn6udya7jinh5w5kf6tkxnw6jxnk3yhzi6kx4nggltpd3tlpey"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1
     }
   },
   {
@@ -61,7 +76,12 @@
         "alt": ""
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreicg7i7kycafnklccqrtun3wejwwmqig7l2sckk6zx47oerl46eou4",
@@ -76,6 +96,11 @@
       "title": "The MAGA revolution threatens America’s most innovative place",
       "description": "Cuts to funding risk hobbling Boston’s science establishment",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreidtbze6rq3yekmecpw2ypaz76jobw65a6px62mhhebosghselgldu"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -95,7 +120,12 @@
         "alt": ""
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreib5w3gmo3u6auj4xrv5vvd4zsmkcwwx37vqm6uyhevqvjubumqi5e",
@@ -110,7 +140,12 @@
         "alt": "Hong Kong street graffiti saying fuck the CCP"
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreicmnx772thbrema53vjjgwui7iz2jdzvjx24lgqubwb3wrbhaiwmq",
@@ -125,6 +160,11 @@
       "title": "TV Before Cable Was a Barren Landscape. It Was Also Magical.",
       "description": "We jammed forks into the antenna, tuned the dial like a radio and stumbled upon unexpected wonders.",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihfgx47s6zkgtgan7au3bum466hxjuqqmivhvzlvq3dvn2ffede5u"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -140,6 +180,11 @@
       "title": "Majority of Filipinos want Duterte held to account in ICC drug war case: survey",
       "description": "Support for Duterte’s drug war once exceeded 80 per cent, but a new poll indicates 62 per cent now want him to stand trial for it.",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiftqye2ojfj7oote2pywv7jbjyuyrcmflbkjjn7pfco3rsdhwuk4q"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -155,6 +200,11 @@
       "title": "How America could end up making China great again",
       "description": "A big beautiful opportunity",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreihld7ekhbldv2wuq7pbsjazjlqckoo5dzwwxb7xymww3pnuxq5ixq"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -170,6 +220,11 @@
       "title": "OnlyFans founder, crypto foundation submit late-stage bid to buy TikTok",
       "description": "A startup run by Tim Stokely, founder of adult content social media site OnlyFans, has partnered with a cryptocurrency foundation to submit a late-stage plan to acquire short video app TikTok from Chinese owner ByteDance, the two said on Wednesday.",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreieefphudl5vqvpj3ksbvvmn7trydyhb7fsety533664btnuti7are"
+    },
+    "interactions": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -189,7 +244,12 @@
         "alt": "The cover of the book Abundance by Derek Thompson and Ezra Klein"
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreignlt4tqmonvqajvuktomscajxshrc5d4a62pevt7554om3ngvtne",
@@ -204,6 +264,11 @@
       "title": "Excerpt from Conan O'Brien's Mark Twain Prize Acceptance Speech",
       "description": "YouTube video by Conan O'Brien",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiany434axneoyxleukluoldmik2jjddhytgcplsvc5t72wf23ei2q"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -219,6 +284,11 @@
       "title": "Molli and Max in the Future (2023) | Full Sci-Fi Rom-Com Movie",
       "description": "YouTube video by Level 33 Entertainment",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreignd26wt3l7bag4ro445qs2hozazoxjkxxhxpj7cfmlppek5433zm"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
     }
   },
   {
@@ -234,7 +304,12 @@
         "alt": ""
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreietxaprh4kw6mdkl5sefs5aie5tndnylqr37iqflu6uff7ogosami",
@@ -261,7 +336,12 @@
         "alt": ""
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreigyxx3jfatfclme6uzonaefvketvjm73twvu2z2hqwflhwihmuhhe",
@@ -288,7 +368,12 @@
         "alt": ""
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreifkztlcghxiolw7guedmgs2kk6vrpljtl2t7fsbf5u3tivdckjbwi",
@@ -303,7 +388,12 @@
         "alt": "Owner of a microbrewery in Tainan, Taiwan, wears a baseball cap for the team Arizona Diamondbacks while smiling at patrons."
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreiagjzr3xkihugagxpqpwcodav2r2367p3bqbcprsiqjfugw7eupuq",
@@ -313,7 +403,12 @@
     "date": "2025-02-16T10:27:57.049Z",
     "content": "Amazon is closing another loophole for people who strip DRM from their ebooks to use on other devices. Publishers may appreciate the move, but it's a blow to open platforms.",
     "images": [],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreifwkf6dqpgyxytet35gxatx3s7p5xly6dykmlfyqfiygp77ebsuau",
@@ -323,7 +418,12 @@
     "date": "2025-01-19T09:37:53.449Z",
     "content": "The bipartisan nature of the TikTok ban has become a rorschach test for politically disengaged Americans. Reddit is full of comments blaming Trump for the ban because they think the law started under him (he tried to ban it by executive order, on weak legal footing, which was reversed by Biden).",
     "images": [],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreie7rr2bw4id6pfoijughmuxvaeh4alc3bbqzlqeoaogtadztuh6iu",
@@ -338,6 +438,11 @@
       "title": "Decentralised kingdom: bitcoin’s Trump bump and how China lost its crypto crown",
       "description": "As the world’s factory, China cornered the market on bitcoin mining, leading to a flurry of crypto business activity before a harsh crackdown in 2021.",
       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreiehabj35ykjgntussjvsu67ix2mmpxpwvvavenqr7auat5mtsgaaq"
+    },
+    "interactions": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 1
     }
   },
   {
@@ -348,7 +453,12 @@
     "date": "2024-09-30T10:47:17.330Z",
     "content": "<p><span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.social/@arroz\" class=\"u-url mention\">@<span>arroz</span></a></span> I don&#39;t think I know a single person who owned a LaserDisc player, but I remember watching Speed on LaserDisc at CircuitCity. A few years later I bought the Star Wars trilogy on LaserDisc at a yard sale for $1 per disc. I liked the cover art.</p><p>I&#39;m sometimes surprised how much of Asia skipped VHS, though, and went straight to VCD, something else that never caught on in the US.</p>",
     "images": [],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "mastodon-111238663488623035",
@@ -363,6 +473,11 @@
       "title": "How a billionaire-backed network of AI advisers took over Washington",
       "description": "A sprawling network spread across Congress, federal agencies and think tanks is pushing policymakers to put AI apocalypse at the top of the agenda — potentially boxing out other worries and benefiting top AI companies with ties to the network.",
       "thumb": ""
+    },
+    "interactions": {
+      "likes": 3,
+      "reposts": 6,
+      "replies": 1
     }
   },
   {
@@ -378,7 +493,12 @@
         "alt": ""
       }
     ],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "bsky-bafyreifpgdiulofzrvtv437tgq3qzknzuvmmu3qmhv35d6ml5ce4ipz3yi",
@@ -388,7 +508,12 @@
     "date": "2023-09-20T09:28:56.633Z",
     "content": "And this is still a common misperception about the program.",
     "images": [],
-    "external": null
+    "external": null,
+    "interactions": {
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0
+    }
   },
   {
     "id": "mastodon-110020898513148298",
@@ -408,6 +533,11 @@
       "title": "Stand News sedition trial: Ex-editor questioned over op-ed likening Hong Kong to Orwell’s ‘Nineteen Eighty-Four’",
       "description": "A former editor of defunct Hong Kong independent news outlet Stand News on trial for sedition has been questioned over an op-ed that compared Hong Kong to the fictional totalitarian regime in George Orwell’s Nineteen Eighty-Four. Meanwhile, the judge presiding over the trial asked whether Nineteen Eighty-Four was a book, and what it was about. […]",
       "thumb": ""
+    },
+    "interactions": {
+      "likes": 10,
+      "reposts": 17,
+      "replies": 1
     }
   },
   {

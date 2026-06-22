@@ -82,6 +82,25 @@ description: "A centralized social timeline aggregating posts from Bluesky, Mast
           {% endfor %}
         </div>
       {% endif %}
+
+      {% if item.interactions %}
+        {% assign has_likes = item.interactions.likes | default: 0 %}
+        {% assign has_reposts = item.interactions.reposts | default: 0 %}
+        {% assign has_replies = item.interactions.replies | default: 0 %}
+        {% if has_likes > 0 or has_reposts > 0 or has_replies > 0 %}
+          <div class="post-interactions" style="margin-top: 15px; font-size: 0.8rem; color: #8c8578; display: flex; gap: 16px; border-top: 1px dashed #1c1c24; padding-top: 10px;">
+            {% if has_likes > 0 %}
+              <span class="interaction-item" title="Likes">★ {{ has_likes }}</span>
+            {% endif %}
+            {% if has_reposts > 0 %}
+              <span class="interaction-item" title="Reposts">⇄ {{ has_reposts }}</span>
+            {% endif %}
+            {% if has_replies > 0 %}
+              <span class="interaction-item" title="Replies">💬 {{ has_replies }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
     </article>
   {% else %}
     <p style="text-align: center; color: #8c8578; padding: 40px 0;">
