@@ -537,3 +537,22 @@ body {
     gap: 8px;
   }
 }
+
+/* Post Interaction Action Button */
+.interaction-action a {
+  color: #D4C5B0;
+  text-decoration: none;
+  border: 1px solid #1c1c24;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #101015;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.interaction-action a:hover {
+  border-color: #D4C5B0;
+  color: #101015;
+  background-color: #D4C5B0;
+  box-shadow: 0 0 8px rgba(212, 197, 176, 0.2);
+}

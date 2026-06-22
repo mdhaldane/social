@@ -83,12 +83,12 @@ description: "A centralized social timeline aggregating posts from Bluesky, Mast
         </div>
       {% endif %}
 
-      {% if item.interactions %}
+      {% if item.interactions or item.type == 'local' or item.source == 'Blog' or item.source == 'WhiteWind' %}
         {% assign has_likes = item.interactions.likes | default: 0 %}
         {% assign has_reposts = item.interactions.reposts | default: 0 %}
         {% assign has_replies = item.interactions.replies | default: 0 %}
-        {% if has_likes > 0 or has_reposts > 0 or has_replies > 0 %}
-          <div class="post-interactions" style="margin-top: 15px; font-size: 0.8rem; color: #8c8578; display: flex; gap: 16px; border-top: 1px dashed #1c1c24; padding-top: 10px;">
+        <div class="post-interactions" style="margin-top: 15px; font-size: 0.8rem; color: #8c8578; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #1c1c24; padding-top: 10px;">
+          <div class="interaction-stats" style="display: flex; gap: 16px;">
             {% if has_likes > 0 %}
               <span class="interaction-item" title="Likes">★ {{ has_likes }}</span>
             {% endif %}
@@ -98,8 +98,22 @@ description: "A centralized social timeline aggregating posts from Bluesky, Mast
             {% if has_replies > 0 %}
               <span class="interaction-item" title="Replies">💬 {{ has_replies }}</span>
             {% endif %}
+            {% if has_likes == 0 and has_reposts == 0 and has_replies == 0 %}
+              <span style="opacity: 0.5;">no interactions</span>
+            {% endif %}
           </div>
-        {% endif %}
+          <div class="interaction-action">
+            {% if item.source == 'Bluesky' or item.source == 'WhiteWind' %}
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">💬 Reply on Bluesky</a>
+            {% elsif item.source contains 'Mastodon' %}
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">💬 Reply on Mastodon</a>
+            {% elsif item.source == 'Blog' %}
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">💬 Comment on Blog</a>
+            {% else %}
+              <a href="{{ item.url }}">💬 Comments & Likes</a>
+            {% endif %}
+          </div>
+        </div>
       {% endif %}
     </article>
   {% else %}
