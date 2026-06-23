@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Matt Haldane | Microblog</title>
+  <subtitle>Matt Haldane's self-hosted decentralized microblog.</subtitle>
+  <link href="https://matthaldane.com/microblog/feed.xml" rel="self" />
+  <link href="https://matthaldane.com/microblog/" />
+  <updated>2026-06-22T05:49:56.271Z</updated>
+  <id>https://matthaldane.com/microblog/</id>
+  <author>
+    <name>Matt Haldane</name>
+  </author><entry>
+      <title>Hello World</title>
+      <link href="https://matthaldane.com/posts/2026-06-21-indieweb-intro/" />
+      <updated>2026-06-21T12:32:00.000Z</updated>
+      <id>https://matthaldane.com/posts/2026-06-21-indieweb-intro/</id>
+      <content type="html"><![CDATA[<p>I've resigned this social page to pull in posts from multiple sources and serve more as a central hub for my online activity (not counting my work). The goal here is to produce an <a href="https://en.wikipedia.org/wiki/IndieWeb">IndieWeb</a> version of my social activity to be less beholden to third-party platforms. Do check back and engage if you're so inclined.</p>
+]]></content>
+    </entry></feed>

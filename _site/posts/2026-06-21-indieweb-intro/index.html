@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <meta name="description" content="Centralized microblog and social dashboard for Matt Haldane, aggregating posts from Bluesky, Mastodon, and local notes.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="webmention" href="https://webmention.io/social.matthaldane.com/webmention" />
+  <link rel="pingback" href="https://webmention.io/social.matthaldane.com/xmlrpc" />
+  <link rel="me" href="https://mastodon.social/@mdhaldane" />
+  <link rel="me" href="https://github.com/mdhaldane" />
+</head>
+<body>
+
+<div class="container">
+  
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="https://matthaldane.com" class="site-title">Matt Haldane</a>
+      <span class="site-subtitle">/ social</span>
+    </div>
+  </header>
+  
+
+  <main id="main-content">
+    <article class="post-item">
+  <div class="post-meta">
+    <span class="post-source">social.matthaldane.com</span>
+    <span class="post-date"><a href="/posts/2026-06-21-indieweb-intro/"><time class="local-date" datetime="2026-06-21T12:32:00.000Z">2026-06-21T12:32:00.000Z</time></a></span>
+  </div>
+  <div class="post-content">
+    <p>I've resigned this social page to pull in posts from multiple sources and serve more as a central hub for my online activity (not counting my work). The goal here is to produce an <a href="https://en.wikipedia.org/wiki/IndieWeb">IndieWeb</a> version of my social activity to be less beholden to third-party platforms. Do check back and engage if you're so inclined.</p>
+
+  </div>
+</article>
+
+<section class="webmentions">
+  <h2 class="webmentions-title">Replies &amp; Likes</h2>
+  
+  
+  
+  <div class="webmentions-list">
+    
+  </div>
+
+  
+    <p style="color: #8c8578; font-size: 0.9rem;">No replies or likes yet.</p>
+  
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Return to <a href="https://matthaldane.com">matthaldane.com</a></p>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize medium-zoom
+    mediumZoom('[data-zoomable]', {
+      background: '#000000',
+      margin: 24
+    });
+
+    // 2. YouTube Inline Player & Auto-linking
+    const posts = document.querySelectorAll('.post-item');
+    const ytRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const urlRegex = /https?:\/\/[^\s<]+/g;
+
+    posts.forEach(post => {
+      const contentEl = post.querySelector('.post-content');
+      const sourceEl = post.querySelector('.post-source');
+      if (!contentEl || !sourceEl) return;
+
+      const source = sourceEl.textContent.toLowerCase();
+
+      // Safe, DOM-based auto-linker for raw text URLs
+      const walk = document.createTreeWalker(contentEl, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          let parent = node.parentElement;
+          while (parent && parent !== contentEl) {
+            const tag = parent.tagName;
+            if (tag === 'A' || tag === 'PRE' || tag === 'CODE' || tag === 'SCRIPT' || tag === 'STYLE') {
+              return NodeFilter.FILTER_REJECT;
+            }
+            parent = parent.parentElement;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      const textNodes = [];
+      let currentNode;
+      while (currentNode = walk.nextNode()) {
+        if (urlRegex.test(currentNode.nodeValue)) {
+          textNodes.push(currentNode);
+        }
+        urlRegex.lastIndex = 0;
+      }
+
+      textNodes.forEach(node => {
+        const text = node.nodeValue;
+        const parent = node.parentElement;
+        if (!parent) return;
+
+        urlRegex.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        let match;
+
+        while ((match = urlRegex.exec(text)) !== null) {
+          const matchIndex = match.index;
+          const url = match[0];
+
+          if (matchIndex > lastIndex) {
+            fragment.appendChild(document.createTextNode(text.substring(lastIndex, matchIndex)));
+          }
+
+          const link = document.createElement('a');
+          link.href = url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = url;
+          fragment.appendChild(link);
+
+          lastIndex = urlRegex.lastIndex;
+        }
+
+        if (lastIndex < text.length) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+        }
+
+        parent.replaceChild(fragment, node);
+      });
+
+      // Check for YouTube links
+      const links = contentEl.querySelectorAll('a');
+      let videoId = null;
+
+      links.forEach(a => {
+        const match = a.href.match(ytRegex);
+        if (match && !videoId) {
+          videoId = match[1];
+        }
+      });
+
+      // If a YouTube video is found, render the inline player facade
+      if (videoId) {
+        const playerContainer = document.createElement('div');
+        playerContainer.className = 'yt-embed-container';
+        
+        const facade = document.createElement('div');
+        facade.className = 'yt-facade';
+        facade.style.backgroundImage = `url('https://i3.ytimg.com/vi/${videoId}/hqdefault.jpg')`;
+        facade.innerHTML = `<button class="yt-play-button">► Play Video</button>`;
+        
+        playerContainer.appendChild(facade);
+        
+        // Append player below the post content, but before any media grid
+        const mediaGrid = post.querySelector('.post-media-grid');
+        if (mediaGrid) {
+          post.insertBefore(playerContainer, mediaGrid);
+        } else {
+          post.appendChild(playerContainer);
+        }
+
+        // Click handler to swap facade with actual autoplay iframe
+        facade.addEventListener('click', () => {
+          const iframe = document.createElement('iframe');
+          iframe.className = 'yt-iframe';
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          iframe.title = 'YouTube video player';
+          iframe.frameBorder = '0';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          
+          playerContainer.replaceChild(iframe, facade);
+        });
+      }
+    });
+
+    // 3. Localize Timestamps to Browser's Local Timezone
+    const timeElements = document.querySelectorAll('time.local-date');
+    const dateFormatter = new Intl.DateTimeFormat(undefined, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false // matches the technical terminal aesthetic
+    });
+    timeElements.forEach(el => {
+      const utcStr = el.getAttribute('datetime');
+      if (!utcStr) return;
+      try {
+        const date = new Date(utcStr);
+        if (!isNaN(date.getTime())) {
+          el.textContent = dateFormatter.format(date);
+        }
+      } catch (e) {
+        console.error('Error formatting date:', e);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
