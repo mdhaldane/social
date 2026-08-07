@@ -1,5 +1,49 @@
 [
   {
+    "id": "bsky-bafyreiezcyf2vokd63nfivkyzlsiojyyuiqjf3waqkd5v74ltpyp4wbdyq",
+    "type": "remote",
+    "source": "Bluesky",
+    "url": "https://bsky.app/profile/matthaldane.com/post/3mp66obmjj223",
+    "date": "2026-06-26T05:12:44.269Z",
+    "content": "Om Malik has passed away at the age of 60: om.co/2026/06/24/1.... I don't think I know anyone my age who went into tech journalism who wasn't reading Gigaom back in the day. RIP\n\nhttps://om.co/2026/06/24/1966-2026/",
+    "images": [],
+    "external": {
+      "uri": "https://om.co/2026/06/24/1966-2026/",
+      "title": "Om Malik, 1966-2026",
+      "description": "Om Malik passed away on June 24, 2026, at Stanford Hospital after a long health journey with his heart. He was surrounded by family and friends. We invite you to share your remembrances of Om in th…",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreidpualoyev7uikhnhistsaekbuxm47wq32ztxt3du2ywrlmltmy3e"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
+    "id": "bsky-bafyreiaabky3g7dxcurqsfs465ukuehbtufkazdehjubfckbwggluwdzma",
+    "type": "remote",
+    "source": "Bluesky",
+    "url": "https://bsky.app/profile/social.matthaldane.com/post/3mow7exkewc2q",
+    "date": "2026-06-23T01:04:10.771Z",
+    "content": "Alan Greenspan and Clive Davis on the same day. Titans in their respective fields. End of an era, as they say.",
+    "images": [
+      {
+        "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiemhjit2ttqhg5z47sovtbg5obnqhw4wl2svc2sienevwjhtg2jpy",
+        "alt": ""
+      },
+      {
+        "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreibtoe6iuq5l6ycwbfczoabhqaj3nd5mdjdmztbw77nkf5larb2cnm",
+        "alt": ""
+      }
+    ],
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
     "id": "bsky-bafyreigojspxn2tscpou2litv767xsimfbhjw3cyiswad6cje3jlbdcus4",
     "type": "remote",
     "source": "Bluesky",
