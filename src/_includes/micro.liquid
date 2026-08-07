@@ -9,6 +9,13 @@ layout: base.liquid
   <div class="post-content">
     {{ content }}
   </div>
+  {% if images and images.size > 0 %}
+  <div class="post-media-grid" data-count="{{ images.size }}">
+    {% for image in images %}
+      <img src="{{ image.url }}" alt="{{ image.alt | escape }}" loading="lazy" />
+    {% endfor %}
+  </div>
+  {% endif %}
 </article>
 
 <section class="webmentions">

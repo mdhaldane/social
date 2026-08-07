@@ -38,7 +38,7 @@ module.exports = function(eleventyConfig) {
       get content() {
         return post.templateContent;
       },
-      images: []
+      images: post.data.images || []
     }));
 
     // 3. Load remote archive.json

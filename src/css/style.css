@@ -112,6 +112,11 @@ body {
 .post-content p:last-child {
   margin-bottom: 0;
 }
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
 
 /* Media Grid Styles */
 .post-media-grid {
