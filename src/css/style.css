@@ -1,51 +1,181 @@
 /* Core Styling inspired by matthaldane.com */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&display=swap');
 
+html {
+  box-sizing: border-box;
+  background-color: #101015;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  position: relative;
+  min-height: 100%;
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 64em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 80em) {
+  html {
+    font-size: 22px;
+  }
+}
+
 body {
   background-color: #101015;
   color: #E8E3D3;
   font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
   padding-bottom: 60px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #D4C5B0 !important;
+  text-decoration: underline !important;
+}
+
+a:hover {
+  color: #E8E3D3 !important;
 }
 
 .container {
   max-width: 650px;
-  margin: 0 auto;
+  margin: 2em auto 0;
   padding: 0 20px;
 }
 
+/* Exact Main Site Masthead Styles from minimal-mistakes + custom.html */
 .masthead {
-  border-bottom: 1px solid #1c1c24;
-  margin-bottom: 40px;
-  padding: 30px 0;
+  background-color: #101015 !important;
+  border-bottom: 1px solid #D4C5B0 !important;
+  position: relative;
+  z-index: 20;
 }
 
-.masthead-inner {
+.masthead__inner-wrap {
+  clear: both;
+  margin-inline: auto;
+  padding: 1em;
+  max-width: 100% !important;
+  padding-left: 2em;
+  padding-right: 2em;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+}
+
+.masthead__menu {
+  display: flex;
+  width: 100%;
+}
+
+.greedy-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 2em;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .site-title {
-  color: #D4C5B0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-decoration: none;
+  display: flex;
+  align-self: center;
+  font-weight: bold;
+  color: #D4C5B0 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-right: auto;
 }
 
-.site-title:hover {
-  color: #dfd4c4;
+.greedy-nav .visible-links {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-.site-subtitle {
-  color: #8c8578;
-  font-size: 0.9rem;
+.greedy-nav .visible-links li {
+  flex: none;
+  display: block;
 }
+
+.greedy-nav a {
+  display: block;
+  margin: 0 1rem;
+}
+
+.masthead__menu-item a {
+  color: #E8E3D3 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+.search__toggle {
+  margin-inline: 1rem;
+  height: 2rem;
+  border: 0;
+  outline: none;
+  color: #D4C5B0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+
+.search__toggle:hover {
+  color: #E8E3D3;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.greedy-nav .visible-links a {
+  position: relative;
+}
+
+.greedy-nav .visible-links a:before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  height: 4px;
+  background: #D4C5B0;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  transform: scaleX(0) translate3d(0, 0, 0);
+}
+
+.greedy-nav .visible-links a:hover:before {
+  transform: scaleX(1);
+}
+
 
 /* Post Styling */
 .post-item {
@@ -97,12 +227,12 @@ body {
 
 .post-content a {
   color: #D4C5B0;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .post-content a:hover {
   color: #dfd4c4;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Mastodon HTML content overrides */
@@ -181,7 +311,7 @@ body {
 /* Footer */
 .footer {
   margin-top: 60px;
-  border-top: 1px solid #1c1c24;
+  border-top: 1px solid #D4C5B0;
   padding-top: 20px;
   text-align: center;
   font-size: 0.8rem;
@@ -304,14 +434,14 @@ body {
 .yt-play-button {
   position: relative;
   z-index: 2;
-  background: #1a1a24;
+  background: #101015;
   color: #D4C5B0;
   border: 1px solid #D4C5B0;
   padding: 10px 20px;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -321,7 +451,6 @@ body {
 .yt-facade:hover .yt-play-button {
   background: #D4C5B0;
   color: #101015;
-  box-shadow: 0 0 10px rgba(212, 197, 176, 0.4);
 }
 
 .yt-iframe {
@@ -547,9 +676,9 @@ body {
 .interaction-action a {
   color: #D4C5B0;
   text-decoration: none;
-  border: 1px solid #1c1c24;
+  border: 1px solid #D4C5B0;
   padding: 3px 8px;
-  border-radius: 4px;
+  border-radius: 0;
   background-color: #101015;
   transition: all 0.2s ease;
   display: inline-block;
@@ -559,5 +688,4 @@ body {
   border-color: #D4C5B0;
   color: #101015;
   background-color: #D4C5B0;
-  box-shadow: 0 0 8px rgba(212, 197, 176, 0.2);
 }
