@@ -3,7 +3,7 @@ name: Deploy Eleventy to GitHub Pages
 on:
   push:
     branches:
-      - dashboard
+      - main
   schedule:
     - cron: '0 */6 * * *'  # Automatically rebuild every 6 hours to pull fresh webmentions
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: 'dashboard'
+          ref: 'main'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
