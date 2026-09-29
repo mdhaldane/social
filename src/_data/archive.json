@@ -1,5 +1,25 @@
 [
   {
+    "id": "bsky-bafyreihyoqpsej6mb2djev7wi4kb6sjzu4kitqavp5jvynb5g7nlic6dre",
+    "type": "remote",
+    "source": "Bluesky",
+    "url": "https://bsky.app/profile/social.matthaldane.com/post/3mwnqku5ovk25",
+    "date": "2026-09-29T11:39:13.159Z",
+    "content": "\"…it doesn’t matter much to the reader which of these latter two words the model ultimately chooses… \"\n\nAlas… \n\n\"The difference between the almost right word and the right word is really a large matter—’tis the difference between the lightning-bug and the lightning.\" –Mark Twain\n\nhttps://www.anthropic.com/news/claude-text-watermark",
+    "images": [],
+    "external": {
+      "uri": "https://www.anthropic.com/news/claude-text-watermark",
+      "title": "How Claude's text watermarking works",
+      "description": "Future Claude models will generate text that contains a watermark to comply with the EU AI Act. We answer questions about how it works and whether it affects outputs.",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiaqxfnygcfttvwlgkdygccy23ukqagzi3snoniubskv54ddog5hua"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
     "id": "bsky-bafyreiezcyf2vokd63nfivkyzlsiojyyuiqjf3waqkd5v74ltpyp4wbdyq",
     "type": "remote",
     "source": "Bluesky",
