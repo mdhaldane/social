@@ -1,5 +1,25 @@
 [
   {
+    "id": "bsky-bafyreidu6nbw77et4pgf6xy5gmrzc5gddxksf3agzsnd3d635k5nkf32o4",
+    "type": "remote",
+    "source": "Bluesky",
+    "url": "https://bsky.app/profile/social.matthaldane.com/post/3mxspb4oyjs2x",
+    "date": "2026-10-14T04:24:23.758Z",
+    "content": "She's looked at life from both sides now\n\nhttps://www.nytimes.com/2026/10/13/arts/music/joni-mitchell-us-citizenship.html",
+    "images": [],
+    "external": {
+      "uri": "https://www.nytimes.com/2026/10/13/arts/music/joni-mitchell-us-citizenship.html",
+      "title": "Joni Mitchell Is Now an American, After 60 Years of Living in the U.S.",
+      "description": "On Tuesday, she announced the news of her U.S. citizenship on social media with a video and a photo of herself at the ceremony.",
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:j2p5gvo2hg7fxtnypmwqaq7h/bafkreiemqxhvovmqq6hvbz4jkc4g6nwm6ehmaugxctduclclbledzj4aje"
+    },
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
     "id": "bsky-bafyreihyoqpsej6mb2djev7wi4kb6sjzu4kitqavp5jvynb5g7nlic6dre",
     "type": "remote",
     "source": "Bluesky",
