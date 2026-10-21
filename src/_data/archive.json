@@ -1,5 +1,25 @@
 [
   {
+    "id": "bsky-bafyreig6cw4me4hxkbtj62neq4ahhwaxof2sdabkjnnzczpvr3exh7d5hi",
+    "type": "remote",
+    "source": "Bluesky",
+    "url": "https://bsky.app/profile/matthaldane.com/post/3mydyaqnjvc2y",
+    "date": "2026-10-21T01:20:42.439Z",
+    "content": "I used some variation of this line many times in years past. But I didn't have a Terminal back then, so I didn't know Joe was making fun of me.",
+    "images": [
+      {
+        "url": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:dhqhylu42opraylmcwlkunvj/bafkreidkbdgzsffvntlboagvmg7oix6phwkirotv4skeklebktwgt4lqme",
+        "alt": "Joe Weisenthal writes on Twitter: I wrote about how I always used to make fun of the guys who said things like \"Bitcoin is speculative, but the underlying blockchain technology is interesting.\" And now I think maybe they kinda had a point."
+      }
+    ],
+    "external": null,
+    "interactions": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0
+    }
+  },
+  {
     "id": "bsky-bafyreihbwnip6nnu453exao5pqa4kxjtm5bo5knq6yo5pptouzc22uexru",
     "type": "remote",
     "source": "Bluesky",
